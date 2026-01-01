@@ -1,16 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-Sitemap: https://iptvnetwork.github.io/sitemap.xml
-
-# Slow down aggressive crawlers
-User-agent: MJ12bot
-Crawl-delay: 10
-
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
+Sitemap: https://yourdomain.github.io/sitemap.xml

@@ -1,78 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="description" content="Free IPTV streaming service with hundreds of live channels. Stream movies, sports, news, and entertainment worldwide." />
-  <meta name="keywords" content="IPTV,streaming,live channels,free TV,movies,sports,news" />
-  <meta name="theme-color" content="#0f1720" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="IPTV Network - Free Live Streaming" />
-  <meta property="og:description" content="Watch unlimited live channels from around the world." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://iptvnetwork.github.io" />
-  <meta property="og:image" content="https://iptvnetwork.github.io/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IPTV Network" />
-  <meta name="twitter:description" content="Free live streaming channels" />
-  <title>IPTV Network - Free Live Streaming | Watch Movies, Sports &amp; News</title>
-  <link rel="canonical" href="https://iptvnetwork.github.io" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231f8ef1' width='100' height='100'/><text x='50' y='55' font-size='60' fill='white' text-anchor='middle' dy='.3em'>▶</text></svg>" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  <link rel="preload" href="data/channels.json" as="fetch" crossorigin="anonymous" />
-  <link rel="manifest" href="manifest.json" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IPTV Network","description":"Free IPTV streaming service","url":"https://iptvnetwork.github.io","applicationCategory":"MultimediaApplication"}</script>
-  <meta name="google-site-verification" content="WYn06cmPXRiJe4tImNjQ9Xfnpxk5fchjIKFbEDTw3y4" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPTV Network - Professional Live TV Streaming Platform">
+    <meta name="keywords" content="IPTV, Live TV, Streaming, Channels">
+    <meta name="author" content="IPTV Network">
+    <meta property="og:title" content="IPTV Network">
+    <meta property="og:description" content="Professional Live TV Streaming Platform">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1a1a1a/00d4ff?text=IPTV+Network">
+    <title>IPTV Network - Professional Live TV Streaming</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000' width='100' height='100'/><text x='50' y='50' font-size='50' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>▶</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IPTV Network">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23000' width='192' height='192' rx='30'/><text x='96' y='96' font-size='100' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>▶</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
-  <header class="site-header" role="banner">
-    <div class="header-content">
-      <h1>IPTV Network</h1>
-      <p class="tagline">Free Live Streaming</p>
-    </div>
-    <div class="search-container">
-      <input id="search" placeholder="Search channels..." aria-label="Search channels" type="search" />
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tv"></i>
+                    <h1>IPTV Network</h1>
+                </div>
+                <div class="header-controls">
+                    <button class="btn-search" id="searchBtn" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn-theme" id="themeBtn" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
 
-  <main class="app" id="main-content">
-    <aside class="sidebar" role="complementary" aria-label="Channel list">
-      <div class="sidebar-header">
-        <h2>Channels</h2>
-        <span id="channel-count" class="channel-count" aria-live="polite"></span>
-      </div>
-      <div id="channels" class="channel-list" role="list"></div>
-    </aside>
-
-    <section class="player-area" role="main">
-      <div class="player-container">
-        <video id="player" controls playsinline crossorigin="anonymous" preload="metadata"></video>
-      </div>
-      <div class="info-panel">
-        <div id="nowplaying" class="nowplaying" aria-live="polite">Select a channel to play</div>
-        <div class="controls">
-          <button id="favorite-btn" class="btn btn-secondary" aria-label="Add to favorites" title="Save favorite">♡ Favorite</button>
-          <button id="fullscreen-btn" class="btn btn-secondary" aria-label="Fullscreen" title="Enter fullscreen">⛶ Fullscreen</button>
+            <!-- Search Bar -->
+            <div class="search-container" id="searchContainer" style="display: none;">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search channels... (e.g., BTV, News, Sports)"
+                    autocomplete="off"
+                >
+                <button class="btn-close-search" id="closeSearchBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer" role="contentinfo">
-    <p>&copy; 2026 IPTV Network. <a href="#" aria-label="Privacy Policy">Privacy</a> | <a href="#" aria-label="Terms of Service">Terms</a></p>
-  </footer>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Categories Navigation -->
+            <nav class="categories">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th"></i> All Channels
+                </button>
+                <div id="categoriesList" class="categories-list"></div>
+            </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0/dist/hls.min.js"></script>
-  <script src="assets/js/player.js" defer></script>
-  <noscript>
-    <div style="padding:20px;background:#222;color:#fff;text-align:center">
-      <p>Please enable JavaScript to use this application.</p>
+            <!-- Loading Indicator -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading channels...</p>
+            </div>
+
+            <!-- Channels Grid -->
+            <div class="channels-grid" id="channelsGrid"></div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h2>No Channels Found</h2>
+                <p>Try a different search or category</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Player Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="player-container">
+            <div class="player-header">
+                <div class="player-info">
+                    <img id="playerLogo" src="" alt="Channel Logo" class="player-logo">
+                    <div>
+                        <h2 id="playerName">Channel Name</h2>
+                        <p id="playerCategory">Category</p>
+                    </div>
+                </div>
+                <button class="btn-close-player" id="closePlayerBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Video Player -->
+            <div class="player-wrapper">
+                <video 
+                    id="videoPlayer" 
+                    class="video-player"
+                    controls
+                    controlsList="nodownload"
+                >
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="player-controls">
+                <div class="control-group">
+                    <button class="control-btn" id="playPauseBtn" title="Play/Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-btn" id="volumeBtn" title="Mute/Unmute">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
+                </div>
+                <div class="control-group">
+                    <span class="player-timer">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </span>
+                    <button class="control-btn" id="fullscreenBtn" title="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quality Selector -->
+            <div class="quality-selector" id="qualitySelector" style="display: none;">
+                <label>Quality:</label>
+                <select id="qualitySelect">
+                    <option value="auto">Auto</option>
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                </select>
+            </div>
+
+            <!-- Related Channels -->
+            <div class="related-channels">
+                <h3>Related Channels</h3>
+                <div class="related-list" id="relatedList"></div>
+            </div>
+        </div>
     </div>
-  </noscript>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 IPTV Network. All rights reserved.</p>
+            <p>This is a streaming platform for live television channels.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
