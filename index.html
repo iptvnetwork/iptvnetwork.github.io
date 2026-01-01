@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IPTV Network</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="Professional IPTV directory and player." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">IPTV Network</h1>
+      <p class="tag">Browse channels and watch live streams — free on GitHub Pages</p>
+    </div>
+  </header>
+
+  <main class="container site-main">
+    <section class="player-panel">
+      <div class="player-wrap">
+        <video id="player" controls playsinline poster="" crossorigin="anonymous"></video>
+        <div id="player-info" class="player-info">Select a channel to start</div>
+      </div>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search channels, groups..." />
+        <select id="groupFilter"><option value="all">All Groups</option></select>
+      </div>
+    </section>
+
+    <section class="channels-panel">
+      <div id="channels" class="channels-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© IPTV Network — Hosted on GitHub Pages</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
