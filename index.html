@@ -1,1 +1,29 @@
-ehr 3q4y gvb 4whhb
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IPTV Network</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>IPTV Network</h1>
+    <input id="search" placeholder="Search channels..." aria-label="Search channels">
+  </header>
+
+  <main class="app">
+    <aside class="sidebar">
+      <div id="channels" class="channel-list"></div>
+    </aside>
+
+    <section class="player-area">
+      <video id="player" controls playsinline crossorigin="anonymous"></video>
+      <div id="nowplaying" class="nowplaying">Select a channel to play</div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="assets/js/player.js"></script>
+</body>
+</html>
