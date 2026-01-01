@@ -371,7 +371,7 @@ Expected Lighthouse Scores:
 ═══════════════════════════════════════════════════════════════════════════════
 
 Generated: January 1, 2026
-Version: 1.0.0 Professional
+Version: 1.0.1 Professional
 Status: ✅ Complete & Verified
 Maintenance: Minimal (static site)
 
