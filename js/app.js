@@ -11,12 +11,15 @@ class IPTVApp {
         this.searchTerm = '';
         this.activeCategory = 'all';
         this.isDarkMode = true;
+        this.favorites = new Set();
+        this.lastScrollY = 0;
         this.init();
     }
 
     async init() {
         this.setupEventListeners();
         this.loadTheme();
+        this.loadFavorites();
         await this.loadChannels();
         this.renderChannels();
         this.renderCategories();
@@ -57,6 +60,15 @@ class IPTVApp {
         document.getElementById('volumeBtn').addEventListener('click', () => this.toggleMute());
         document.getElementById('volumeSlider').addEventListener('input', (e) => this.setVolume(e.target.value));
         document.getElementById('fullscreenBtn').addEventListener('click', () => this.toggleFullscreen());
+
+        // Sticky player controls
+        const stickyPlay = document.getElementById('stickyPlayBtn');
+        const stickyClose = document.getElementById('stickyCloseBtn');
+        if (stickyPlay) stickyPlay.addEventListener('click', (e) => { e.stopPropagation(); this.togglePlayPause(); });
+        if (stickyClose) stickyClose.addEventListener('click', (e) => { e.stopPropagation(); this.hideStickyPlayer(); });
+
+        // Scroll: header shadow + hide/show
+        window.addEventListener('scroll', () => this.handleScroll());
 
         videoPlayer.addEventListener('play', () => this.updatePlayPauseIcon());
         videoPlayer.addEventListener('pause', () => this.updatePlayPauseIcon());
@@ -126,11 +138,23 @@ class IPTVApp {
         card.innerHTML = `
             <img src="${channel.logo}" alt="${channel.name}" class="channel-logo" onerror="this.src='https://via.placeholder.com/200x150?text=No+Image'">
             <div class="channel-info">
-                <div class="channel-name">${this.escapeHtml(channel.name)}</div>
+                <div style=\"display:flex;align-items:center;justify-content:space-between;gap:0.5rem;\">
+                    <div class=\"channel-name\">${this.escapeHtml(channel.name)}</div>
+                    <button class=\"fav-btn ${this.isFavorite(channel) ? 'active' : ''}\" data-channel-id=\"${this.escapeHtml(channel.id || channel.name)}\" title=\"Favorite\"><i class=\"fas fa-star\"></i></button>
+                </div>
                 <span class="channel-category">${this.escapeHtml(channel.group || 'Other')}</span>
                 <div class="channel-status">Live</div>
             </div>
         `;
+
+        // Favorite button handling
+        const favBtn = card.querySelector('.fav-btn');
+        if (favBtn) {
+            favBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleFavorite(channel, favBtn);
+            });
+        }
 
         card.addEventListener('click', () => this.openPlayer(channel));
         return card;
@@ -202,6 +226,37 @@ class IPTVApp {
     }
 
     // ===========================
+    // FAVORITES
+    // ===========================
+    loadFavorites() {
+        try {
+            const raw = localStorage.getItem('iptv-favs');
+            if (raw) JSON.parse(raw).forEach(id => this.favorites.add(id));
+        } catch (e) { /* ignore */ }
+    }
+
+    saveFavorites() {
+        try { localStorage.setItem('iptv-favs', JSON.stringify(Array.from(this.favorites))); } catch(e) {}
+    }
+
+    isFavorite(channel) {
+        const id = channel.id || channel.name;
+        return this.favorites.has(id.toString());
+    }
+
+    toggleFavorite(channel, btnEl) {
+        const id = (channel.id || channel.name).toString();
+        if (this.favorites.has(id)) {
+            this.favorites.delete(id);
+            btnEl.classList.remove('active');
+        } else {
+            this.favorites.add(id);
+            btnEl.classList.add('active');
+        }
+        this.saveFavorites();
+    }
+
+    // ===========================
     // PLAYER MODAL
     // ===========================
     openPlayer(channel) {
@@ -225,6 +280,9 @@ class IPTVApp {
         document.getElementById('overlay').classList.add('active');
         document.body.style.overflow = 'hidden';
 
+        // Show sticky player UI (visual)
+        this.showStickyPlayer(channel);
+
         // Auto play
         videoPlayer.play().catch(error => {
             console.warn('Autoplay prevented:', error);
@@ -240,6 +298,42 @@ class IPTVApp {
         document.getElementById('overlay').classList.remove('active');
         document.body.style.overflow = 'auto';
         this.currentChannel = null;
+    }
+
+    // ===========================
+    // STICKY PLAYER (UI only)
+    // ===========================
+    showStickyPlayer(channel) {
+        const el = document.getElementById('stickyPlayer');
+        if (!el) return;
+        el.setAttribute('aria-hidden', 'false');
+        document.getElementById('stickyLogo').src = channel.logo || '';
+        document.getElementById('stickyName').textContent = channel.name || '';
+        document.getElementById('stickyCategory').textContent = channel.group || '';
+    }
+
+    hideStickyPlayer() {
+        const el = document.getElementById('stickyPlayer');
+        if (!el) return;
+        el.setAttribute('aria-hidden', 'true');
+    }
+
+    // ===========================
+    // SCROLL HANDLING
+    // ===========================
+    handleScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+        const currentY = window.scrollY;
+        if (currentY > 10) header.classList.add('header--scrolled'); else header.classList.remove('header--scrolled');
+
+        // Hide on scroll down, show on scroll up (small UX)
+        if (currentY > this.lastScrollY && currentY > 120) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+        this.lastScrollY = currentY;
     }
 
     showRelatedChannels(channel) {
