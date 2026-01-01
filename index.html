@@ -2,30 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>IPTV Network</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Free IPTV streaming service with hundreds of live channels. Stream movies, sports, news, and entertainment worldwide." />
+  <meta name="keywords" content="IPTV,streaming,live channels,free TV,movies,sports,news" />
+  <meta name="theme-color" content="#0f1720" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="IPTV Network - Free Live Streaming" />
+  <meta property="og:description" content="Watch unlimited live channels from around the world." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://iptvnetwork.github.io" />
+  <meta property="og:image" content="https://iptvnetwork.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IPTV Network" />
+  <meta name="twitter:description" content="Free live streaming channels" />
+  <title>IPTV Network - Free Live Streaming | Watch Movies, Sports &amp; News</title>
+  <link rel="canonical" href="https://iptvnetwork.github.io" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231f8ef1' width='100' height='100'/><text x='50' y='55' font-size='60' fill='white' text-anchor='middle' dy='.3em'>▶</text></svg>" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preload" href="data/channels.json" as="fetch" crossorigin="anonymous" />
+  <link rel="manifest" href="manifest.json" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IPTV Network","description":"Free IPTV streaming service","url":"https://iptvnetwork.github.io","applicationCategory":"MultimediaApplication"}</script>
   <meta name="google-site-verification" content="WYn06cmPXRiJe4tImNjQ9Xfnpxk5fchjIKFbEDTw3y4" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>IPTV Network</h1>
-    <input id="search" placeholder="Search channels..." aria-label="Search channels">
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="header-content">
+      <h1>IPTV Network</h1>
+      <p class="tagline">Free Live Streaming</p>
+    </div>
+    <div class="search-container">
+      <input id="search" placeholder="Search channels..." aria-label="Search channels" type="search" />
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+    </div>
   </header>
 
-  <main class="app">
-    <aside class="sidebar">
-      <div id="channels" class="channel-list"></div>
+  <main class="app" id="main-content">
+    <aside class="sidebar" role="complementary" aria-label="Channel list">
+      <div class="sidebar-header">
+        <h2>Channels</h2>
+        <span id="channel-count" class="channel-count" aria-live="polite"></span>
+      </div>
+      <div id="channels" class="channel-list" role="list"></div>
     </aside>
 
-    <section class="player-area">
-      <video id="player" controls playsinline crossorigin="anonymous"></video>
-      <div id="nowplaying" class="nowplaying">Select a channel to play</div>
+    <section class="player-area" role="main">
+      <div class="player-container">
+        <video id="player" controls playsinline crossorigin="anonymous" preload="metadata"></video>
+      </div>
+      <div class="info-panel">
+        <div id="nowplaying" class="nowplaying" aria-live="polite">Select a channel to play</div>
+        <div class="controls">
+          <button id="favorite-btn" class="btn btn-secondary" aria-label="Add to favorites" title="Save favorite">♡ Favorite</button>
+          <button id="fullscreen-btn" class="btn btn-secondary" aria-label="Fullscreen" title="Enter fullscreen">⛶ Fullscreen</button>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script src="assets/js/player.js"></script>
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 IPTV Network. <a href="#" aria-label="Privacy Policy">Privacy</a> | <a href="#" aria-label="Terms of Service">Terms</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0/dist/hls.min.js"></script>
+  <script src="assets/js/player.js" defer></script>
+  <noscript>
+    <div style="padding:20px;background:#222;color:#fff;text-align:center">
+      <p>Please enable JavaScript to use this application.</p>
+    </div>
+  </noscript>
 </body>
 </html>
-
