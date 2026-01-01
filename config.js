@@ -48,7 +48,7 @@ const IPTV_CONFIG = {
 
     // API Settings
     api: {
-        channelsUrl: "data/channels.json",
+        channelsUrl: "https://iptvnetwork.github.io/data/channels.json",
         timeout: 10000,
         retryAttempts: 3
     },
@@ -71,15 +71,15 @@ const IPTV_CONFIG = {
 
     // Social Media Links
     social: {
-        github: "https://github.com/yourusername",
-        twitter: "https://twitter.com/yourhandle",
-        discord: "https://discord.gg/yourserver"
+        github: "https://github.com/iptvnetwork",
+        twitter: "https://twitter.com/iptvnetwork",
+        discord: "https://discord.gg/iptvnetwork"
     },
 
     // Contact
     contact: {
-        email: "your-email@example.com",
-        website: "https://yourdomain.com"
+        email: "info@iptvnetwork.github.io",
+        website: "https://iptvnetwork.github.io"
     }
 };
 

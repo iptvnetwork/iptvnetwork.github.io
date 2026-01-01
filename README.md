@@ -123,7 +123,7 @@ Replace the logo text in `index.html`:
 
 ```html
 <div class="logo">
-    <img src="your-logo.png" alt="Logo" style="width: 50px; height: 50px;">
+  <img src="assets/logo.png" alt="Logo" style="width: 50px; height: 50px;">
     <h1>Your IPTV</h1>
 </div>
 ```

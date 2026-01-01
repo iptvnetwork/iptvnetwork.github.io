@@ -10,13 +10,16 @@
     <meta property="og:description" content="Professional Live TV Streaming Platform">
     <meta property="og:image" content="https://via.placeholder.com/1200x630/1a1a1a/00d4ff?text=IPTV+Network">
     <title>IPTV Network - Professional Live TV Streaming</title>
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000' width='100' height='100'/><text x='50' y='50' font-size='50' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>▶</text></svg>">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#00d4ff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="IPTV Network">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23000' width='192' height='192' rx='30'/><text x='96' y='96' font-size='100' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>▶</text></svg>">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://iptvnetwork.github.io/">
+    <link rel="canonical" href="https://iptvnetwork.github.io/">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -26,7 +29,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-tv"></i>
+                    <img src="assets/logo.png" alt="IPTV Network" class="site-logo">
                     <h1>IPTV Network</h1>
                 </div>
                 <div class="header-controls">
@@ -58,10 +61,24 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <!-- Now Playing Panel -->
+            <section class="now-playing" id="nowPlaying" aria-live="polite">
+                <img src="" alt="Now Playing Logo" class="logo now-logo" id="nowLogo">
+                <div class="now-meta">
+                    <div id="nowChannel" class="now-channel">Not playing</div>
+                    <div id="nowStatus" class="now-status">Idle</div>
+                </div>
+                <div class="now-actions">
+                    <span class="live-badge" id="liveBadge" aria-hidden="true">LIVE</span>
+                </div>
+            </section>
             <!-- Categories Navigation -->
             <nav class="categories">
                 <button class="category-btn active" data-category="all">
                     <i class="fas fa-th"></i> All Channels
+                </button>
+                <button class="category-btn" data-category="favorites" id="favoritesChip" style="display:none;">
+                    <i class="fas fa-star"></i> Favorites
                 </button>
                 <div id="categoriesList" class="categories-list"></div>
             </nav>
