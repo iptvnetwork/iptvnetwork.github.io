@@ -1,0 +1,4 @@
+Contact: security@iptvnetwork.github.io
+Expires: 2027-01-01T00:00:00Z
+Preferred-Languages: en
+Canonical: https://iptvnetwork.github.io/.well-known/security.txt
