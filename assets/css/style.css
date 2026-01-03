@@ -43,11 +43,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-/* --- Variables --- */
-:root {
   --primary: #0ea5e9;
   /* Sky 500 */
   --primary-glow: #0ea5e966;
@@ -60,6 +55,8 @@ body {
   --text-muted: #94a3b8;
   --border: rgba(255, 255, 255, 0.08);
   --header-h: 70px;
+  --footer-h: 40px;
+  /* Added Footer Height */
   --font-main: 'Outfit', sans-serif;
 }
 
@@ -74,12 +71,14 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg-dark);
   color: var(--text-main);
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
+  /* Prevent body scroll, use panels */
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -165,27 +164,29 @@ body {
 
 .header-right .github-link {
   color: var(--text-muted);
-  transition: color 0.2s;
 }
 
 .header-right .github-link:hover {
   color: #fff;
 }
 
-/* --- 2. Main Layout Grid (Desktop) --- */
+/* --- 2. Main Layout Grid (Dashboard Style) --- */
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  /* Left: Flex, Right: Fixed 420px */
-  gap: 32px;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: calc(var(--header-h) + 32px) 24px 32px;
-  min-height: 100vh;
+  margin-top: var(--header-h);
+  height: calc(100vh - var(--header-h) - var(--footer-h));
+  width: 100%;
+  /* Default Desktop/Tablet: 40% Left, 60% Right */
+  grid-template-columns: 40% 60%;
+  overflow: hidden;
 }
 
-/* --- Left Panel: Channels --- */
+/* --- Left Panel: Content --- */
 .left-panel {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -227,11 +228,90 @@ body {
 
 .channels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  /* Smaller cards for dense list */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  /* Adaptive grid inside panel */
   gap: 16px;
 }
 
+/* --- Right Panel: Player --- */
+.right-panel {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  /* Slight dark tint for theatre feel */
+}
+
+/* Sticky Wrapper inside Right Panel (optional, but requested "Fixed" player feel) */
+.sticky-player-wrapper {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.play-btn {
+  background: var(--primary);
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px var(--primary-glow);
+  transition: transform 0.2s;
+}
+
+.player-overlay:hover .play-btn {
+  transform: scale(1.1);
+}
+
+.now-playing-info {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.now-playing-info h2 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.channel-tag {
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin: 0;
+  display: inline-block;
+  background: rgba(14, 165, 233, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* --- Cards --- */
 .channel-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -239,10 +319,10 @@ body {
   padding: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .channel-card:hover {
@@ -305,122 +385,62 @@ body {
   margin-top: 2px;
 }
 
-/* --- Right Panel: Sticky Player --- */
-.right-panel {
-  position: relative;
-  /* Sticky logic */
-  height: fit-content;
-}
-
-.sticky-player-wrapper {
-  position: sticky;
-  top: calc(var(--header-h) + 32px);
-  /* Offset by header + pad */
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #000;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.player-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+/* --- Footer --- */
+.app-footer {
+  height: var(--footer-h);
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 10;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-.play-btn {
-  background: var(--primary);
-  color: #fff;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 30px var(--primary-glow);
-  transition: transform 0.2s;
-}
-
-.player-overlay:hover .play-btn {
-  transform: scale(1.1);
-}
-
-.now-playing-info {
-  background: var(--bg-card);
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-}
-
-.now-playing-info h2 {
-  margin: 0 0 4px;
-  font-size: 1.2rem;
-}
-
-.channel-tag {
-  color: var(--primary);
-  font-size: 0.9rem;
-  margin: 0;
-  display: inline-block;
-  background: rgba(14, 165, 233, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-/* --- Mobile / Tablet Responsiveness --- */
-@media (max-width: 1024px) {
-
-  /* Switch to Stacked Layout */
-  .main-layout {
-    grid-template-columns: 1fr;
-    padding: calc(var(--header-h) + 20px) 16px 20px;
-    gap: 24px;
+/* --- Mobile Responsiveness (< 768px) --- */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+    height: auto;
+    padding-bottom: var(--footer-h);
   }
 
-  /* On Mobile, Show Player FIRST, then channels */
+  .main-layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: calc(var(--header-h) + 10px);
+    padding: 0 16px 20px;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    order: 2;
+    border: none;
+  }
+
   .right-panel {
-    order: -1;
-    /* Move to top */
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    order: 1;
+    margin-bottom: 24px;
+    background: transparent;
   }
 
   .sticky-player-wrapper {
     position: relative;
-    /* Remove sticky on mobile */
-    top: 0;
   }
 
-  .header-center {
-    display: none;
-  }
-
-  /* Hide search in top header on small mobile, move or create toggle */
-  /* If hiding top search, we might need a secondary one. simpler: make it smaller */
-}
-
-@media (max-width: 768px) {
-
-  /* Show search as full width or icon only - simplifying for task */
+  /* Un-stick on mobile */
   .top-header {
     padding: 0 16px;
     gap: 12px;
@@ -429,17 +449,14 @@ video {
   .header-center {
     display: flex;
     max-width: none;
+    flex: 1;
   }
 
   .brand {
     display: none;
   }
 
-  /* Hide brand text on mobile to fit search */
-  .logo-wrapper {
-    height: 60px;
-  }
-
+  /* Hide brand on small screens */
   .channels-grid {
     grid-template-columns: repeat(2, 1fr);
   }
