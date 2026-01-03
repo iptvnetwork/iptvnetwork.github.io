@@ -5,7 +5,11 @@ const currentChannelGroup = document.getElementById('currentChannelGroup');
 const channelCountEl = document.getElementById('channelCount');
 const channelsEl = document.getElementById('channels');
 const searchEl = document.getElementById('search');
+
+// We now have two selects: hidden system one (groupFilter) and visible new one (visibleGroupFilter)
+// To keep logic simple, we'll populate BOTH
 const groupFilter = document.getElementById('groupFilter');
+const visibleGroupFilter = document.getElementById('visibleGroupFilter');
 
 let channels = [];
 let hls = null;
@@ -98,19 +102,27 @@ function parseM3U(content, defaultGroup = 'General') {
 }
 
 function updateChannelCount(count) {
-	channelCountEl.textContent = count;
+	if (channelCountEl) channelCountEl.textContent = count;
 }
 
 function buildGroupOptions() {
 	// Clear existing (except first)
-	while (groupFilter.options.length > 1) { groupFilter.remove(1); }
+	[groupFilter, visibleGroupFilter].forEach(sel => {
+		if (!sel) return;
+		while (sel.options.length > 1) { sel.remove(1); }
+	});
 
 	const groups = Array.from(new Set(channels.map(c => (c.group || 'Ungrouped').toUpperCase()))).sort();
+
 	groups.forEach(g => {
-		const opt = document.createElement('option');
-		opt.value = g;
-		opt.textContent = g;
-		groupFilter.appendChild(opt);
+		// Add to both selects
+		[groupFilter, visibleGroupFilter].forEach(sel => {
+			if (!sel) return;
+			const opt = document.createElement('option');
+			opt.value = g;
+			opt.textContent = g;
+			sel.appendChild(opt);
+		});
 	});
 }
 
@@ -120,9 +132,6 @@ function renderChannels(list) {
 		channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted)">No channels found matching your criteria.</div>';
 		return;
 	}
-
-	// Virtual render limit for performance if list is huge (simple implementation: limit to first 100 initially)
-	// For now, let's just render all since BD list isn't massive (<100 usually).
 
 	list.forEach(ch => {
 		const card = document.createElement('div');
@@ -164,7 +173,7 @@ function renderChannels(list) {
 
 function filterChannels() {
 	const q = searchEl.value.trim().toLowerCase();
-	const group = groupFilter.value;
+	const group = groupFilter.value; // Driven by hidden select which listens to visible select
 
 	const filtered = channels.filter(c => {
 		const matchesQ = q === '' || (c.name && c.name.toLowerCase().includes(q)) || (c.group && c.group.toLowerCase().includes(q));
@@ -178,6 +187,11 @@ function filterChannels() {
 
 function playChannel(ch, cardEl) {
 	activeChannel = ch;
+
+	// Scroll to TOP on mobile if playing
+	if (window.innerWidth < 1024) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 
 	// Update Active UI
 	document.querySelectorAll('.channel-card').forEach(c => c.classList.remove('active'));
@@ -216,11 +230,16 @@ player.addEventListener('play', () => { playerOverlay.style.display = 'none'; })
 player.addEventListener('pause', () => { playerOverlay.style.display = 'flex'; });
 
 searchEl.addEventListener('input', debounce(filterChannels, 300));
-groupFilter.addEventListener('change', filterChannels);
+groupFilter.addEventListener('change', filterChannels); // Standard listener on hidden
+if (visibleGroupFilter) {
+	visibleGroupFilter.addEventListener('change', () => {
+		groupFilter.value = visibleGroupFilter.value; // Sync hidden with visible
+		filterChannels();
+	});
+}
 
 function debounce(fn, ms) {
 	let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) }
 }
 
 loadChannels();
-
