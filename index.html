@@ -2,39 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>IPTV Network</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="assets/css/style.css">
-  <meta name="description" content="Professional IPTV directory and player." />
+  <meta name="description" content="Premium IPTV directory and player." />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">IPTV Network</h1>
-      <p class="tag">Browse channels and watch live streams — free on GitHub Pages</p>
-    </div>
-  </header>
 
-  <main class="container site-main">
-    <section class="player-panel">
-      <div class="player-wrap">
-        <video id="player" controls playsinline poster="" crossorigin="anonymous"></video>
-        <div id="player-info" class="player-info">Select a channel to start</div>
+  <div class="app-layout">
+    <!-- Sidebar / Header Area -->
+    <header class="sidebar">
+      <div class="brand-area">
+        <h1 class="brand">IPTV <span class="highlight">Network</span></h1>
+        <p class="tag">Live TV Directory</p>
       </div>
-      <div class="controls">
-        <input id="search" type="search" placeholder="Search channels, groups..." />
-        <select id="groupFilter"><option value="all">All Groups</option></select>
+      
+      <div class="controls-area">
+        <div class="input-group">
+          <input id="search" type="search" placeholder="Search channels..." />
+          <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </div>
+        <div class="select-wrapper">
+          <select id="groupFilter">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
       </div>
-    </section>
 
-    <section class="channels-panel">
-      <div id="channels" class="channels-grid"></div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container">© IPTV Network — Hosted on GitHub Pages</div>
-  </footer>
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Video Player Section -->
+      <section class="player-container">
+        <div class="video-wrapper">
+          <video id="player" controls playsinline crossorigin="anonymous"></video>
+          <div class="player-overlay" id="playerOverlay">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+        <div class="player-meta">
+          <h2 id="currentChannelName">Select a Channel</h2>
+          <span id="currentChannelGroup" class="badge">Welcome</span>
+        </div>
+      </section>
+
+      <!-- Channel Grid -->
+      <section class="content-area">
+        <h3 class="section-title">Live Channels <span id="channelCount" class="count-badge">0</span></h3>
+        <div id="channels" class="channels-grid"></div>
+      </section>
+
+    </main>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
   <script src="assets/js/app.js"></script>
