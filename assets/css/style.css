@@ -1,33 +1,53 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
 :root {
-  --primary: #38bdf8;
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --bg-hover: #334155;
+  /* Dimensions (Fixed as requested) */
+  --header-height: 100px;
+  --footer-height: 50px;
+
+  /* Colors (Modern Dark Theme) */
+  --primary: #0ea5e9;
+  /* Sky Blue */
+  --primary-hover: #38bdf8;
+  --bg-body: #0f172a;
+  /* Deep Slate */
+  --bg-panel: #1e293b;
+  /* Lighter Slate */
+  --bg-header: rgba(15, 23, 42, 0.95);
+  --border-color: rgba(255, 255, 255, 0.08);
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
-  --border: rgba(255, 255, 255, 0.08);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --radius: 12px;
-  --font-main: 'Outfit', sans-serif;
-  --header-height: 80px;
+
+  --font-family: 'Outfit', system-ui, sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   outline: none;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-main);
-  background-color: var(--bg-dark);
+  font-family: var(--font-family);
+  background-color: var(--bg-body);
   color: var(--text-main);
   height: 100vh;
-  overflow-y: hidden;
-  /* Fix body, scroll content */
+  overflow: hidden;
+  /* Desktop is a fixed app-like experience */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar styling */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -39,336 +59,168 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #334155;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  --primary: #0ea5e9;
-  /* Sky 500 */
-  --primary-glow: #0ea5e966;
-  --bg-dark: #0f172a;
-  --bg-header: #0f172add;
-  /* Backdrop blur */
-  --bg-card: #1e293b;
-  --bg-hover: #334155;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --border: rgba(255, 255, 255, 0.08);
-  /* Added Footer Height */
-  --header-h: 100px;
-  --footer-h: 50px;
-  --font-main: 'Outfit', sans-serif;
-}
-
-/* --- Reset & Base --- */
-* {
-  box-sizing: border-box;
-  outline: none;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-main);
-  background-color: var(--bg-dark);
-  color: var(--text-main);
-  height: 100vh;
-  overflow: hidden;
-  /* Prevent body scroll, use panels */
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
 
-/* --- 1. Top Fixed Header --- */
+/* =========================================
+   2. LAYOUT GRID (Desktop/Tablet)
+   ========================================= */
+
+/* The main app wrapper */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* --- Header (Fixed Top) --- */
 .top-header {
+  height: var(--header-height);
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: var(--header-h);
-  background: var(--bg-header);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  z-index: 100;
 }
 
-.brand {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #fff;
-}
-
-.highlight {
-  color: var(--primary);
-}
-
-.header-center {
-  flex: 1;
-  max-width: 600px;
-  padding: 0 20px;
-}
-
-.search-bar {
-  position: relative;
+/* --- Footer (Fixed Bottom) --- */
+.app-footer {
+  height: var(--footer-height);
   width: 100%;
-}
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+  z-index: 1000;
 
-.search-bar input {
-  width: 100%;
-  background: #1e293b;
-  border: 1px solid var(--border);
-  color: #fff;
-  padding: 10px 16px 10px 42px;
-  border-radius: 24px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: all 0.2s;
-}
-
-.search-bar input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
-  background: #0f172a;
-}
-
-.search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.header-right .github-link {
-  color: var(--text-muted);
-}
-
-.header-right .github-link:hover {
-  color: #fff;
-}
-
-/* --- 2. Main Layout Grid (Dashboard Style) --- */
+/* --- Main Layout Area --- */
 .main-layout {
-  display: grid;
-  margin-top: var(--header-h);
-  height: calc(100vh - var(--header-h) - var(--footer-h));
+  /* Offset by Header */
+  margin-top: var(--header-height);
+  /* Height is Device Height - (Header + Footer) */
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   width: 100%;
-  /* Default Desktop/Tablet: 40% Left, 60% Right */
+
+  display: grid;
+  /* 40% Left, 60% Right */
   grid-template-columns: 40% 60%;
   overflow: hidden;
 }
 
-/* --- Left Panel: Content --- */
+/* =========================================
+   3. PANEL STYLES
+   ========================================= */
+
+/* --- Left Panel: Navigation & Channels --- */
 .left-panel {
-  height: 100%;
-  min-height: 0;
-  /* WebKit fix for nested scrolling */
+  background-color: transparent;
+  border-right: 1px solid var(--border-color);
   overflow-y: auto;
-  overscroll-behavior: contain;
-  /* Prevent parent scroll interactions */
+  /* Independent Scroll */
   padding: 20px;
-  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
+/* Filter Section */
 .filter-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.filter-header h3 {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.badge-count {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  font-size: 0.8rem;
-  padding: 2px 10px;
-  border-radius: 12px;
-  color: var(--text-muted);
-}
-
-.custom-select-wrapper select {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-main);
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.channels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  /* Adaptive grid inside panel */
-  gap: 16px;
-}
-
-/* --- Right Panel: Player --- */
-.right-panel {
-  height: 100%;
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.2);
-  /* Slight dark tint for theatre feel */
-}
-
-/* Sticky Wrapper inside Right Panel (optional, but requested "Fixed" player feel) */
-.sticky-player-wrapper {
+  background: var(--bg-panel);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.video-container {
-  width: 100%;
-  /* max-width removed to fill 60% panel */
-  aspect-ratio: 16/9;
-  background: #000;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: fill;
-  /* Force video to stretch and fit container */
-}
-
-.player-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   z-index: 10;
 }
 
-.play-btn {
-  background: var(--primary);
-  color: #fff;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+.filter-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 30px var(--primary-glow);
-  transition: transform 0.2s;
+  gap: 8px;
 }
 
-.player-overlay:hover .play-btn {
-  transform: scale(1.1);
+.badge-count {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 99px;
 }
 
-.now-playing-info {
-  background: var(--bg-card);
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-}
-
-.now-playing-info h2 {
-  margin: 0 0 4px;
-  font-size: 1.2rem;
-}
-
-.channel-tag {
-  color: var(--primary);
+.custom-select-wrapper select {
+  background: var(--bg-body);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 8px;
   font-size: 0.9rem;
-  margin: 0;
-  display: inline-block;
-  background: rgba(14, 165, 233, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* --- Cards --- */
+/* Channels Grid */
+.channels-grid {
+  display: grid;
+  /* Responsive columns within the 40% panel */
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+/* Channel Card */
 .channel-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   padding: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: relative;
+  height: 100%;
 }
 
 .channel-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary-glow);
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-  z-index: 2;
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
 }
 
 .channel-card.active {
   border-color: var(--primary);
+  background-color: rgba(14, 165, 233, 0.05);
   box-shadow: 0 0 0 1px var(--primary);
-}
-
-.channel-card.active::after {
-  content: 'PLAYING';
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 0.6rem;
-  font-weight: 800;
-  color: var(--primary);
-  background: rgba(14, 165, 233, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
 }
 
 .logo-wrapper {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,7 +231,6 @@ video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .card-info {
@@ -388,91 +239,216 @@ video {
 
 .card-name {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .card-group {
+  font-size: 0.75rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-top: 2px;
 }
 
-/* --- Footer --- */
-.app-footer {
-  height: var(--footer-h);
-  background: var(--bg-dark);
-  border-top: 1px solid var(--border);
+/* --- Right Panel: Player --- */
+.right-panel {
+  background-color: #000;
+  /* Theatre mode background */
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-player-wrapper {
+  width: 100%;
+}
+
+/* Video Container - No max-width as requested */
+.video-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: black;
+  position: relative;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  /* Force fill as requested */
+}
+
+/* Overlays */
+.player-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  z-index: 20;
 }
 
-/* --- Mobile Responsiveness (< 768px) --- */
-@media (max-width: 768px) {
+.play-btn {
+  width: 72px;
+  height: 72px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+  transition: transform 0.2s;
+}
+
+.player-overlay:hover .play-btn {
+  transform: scale(1.1);
+}
+
+/* Play Info (Below Video) */
+.now-playing-info {
+  padding: 24px;
+}
+
+.now-playing-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.channel-tag {
+  display: inline-block;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   4. COMPONENTS
+   ========================================= */
+
+/* Header Content */
+.brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.search-bar {
+  flex: 0 1 500px;
+  /* Search max width */
+  position: relative;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border-radius: 50px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  width: 20px;
+}
+
+.github-link svg {
+  fill: var(--text-muted);
+  transition: fill 0.2s;
+}
+
+.github-link:hover svg {
+  fill: #fff;
+}
+
+/* =========================================
+   5. MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 1024px) {
+  /* Use stacked layout for Tablet Portrait & Mobile */
+
   body {
     overflow: auto;
+    /* Enable page scroll for stack */
     height: auto;
-    padding-bottom: var(--footer-h);
+  }
+
+  .top-header,
+  .app-footer {
+    position: relative;
+    /* Not fixed on mobile usually better for space, or stick to top */
+  }
+
+  .top-header {
+    height: auto;
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 0;
   }
 
   .main-layout {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
+    /* Reset since header not fixed or just stacks */
     height: auto;
-    top: calc(var(--header-h) + 10px);
-    padding: 0 16px 20px;
+    padding-bottom: 60px;
+    /* Space for footer */
+  }
+
+  /* Order: Player Top -> Content Bottom */
+  .right-panel {
+    order: -1;
+    width: 100%;
+    min-height: 250px;
+    /* Ensure space for player */
   }
 
   .left-panel {
     width: 100%;
-    height: auto;
+    border-right: none;
     overflow: visible;
-    padding: 0;
-    order: 2;
-    border: none;
+    padding: 16px;
   }
 
-  .right-panel {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-    padding: 0;
-    order: 1;
-    margin-bottom: 24px;
-    background: transparent;
+  /* Video should stay 16:9 but check height */
+  .video-container {
+    aspect-ratio: 16/9;
   }
 
-  .sticky-player-wrapper {
-    position: relative;
-  }
-
-  /* Un-stick on mobile */
-  .top-header {
-    padding: 0 16px;
-    gap: 12px;
-  }
-
-  .header-center {
-    display: flex;
-    max-width: none;
-    flex: 1;
-  }
-
-  .brand {
-    display: none;
-  }
-
-  /* Hide brand on small screens */
-  .channels-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .app-footer {
+    position: fixed;
+    /* Keep footer fixed or just relative? Fixed requested */
+    z-index: 1000;
   }
 }
