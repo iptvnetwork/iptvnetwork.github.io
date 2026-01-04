@@ -54,55 +54,47 @@
 <body>
 
     <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+        <!-- Top Navigation Bar -->
+        <header class="top-header">
             <div class="brand">
                 <i class="fa-solid fa-tv"></i>
-                <span>IPTV<span class="highlight">Network</span></span>
+                <span>IPTV Network</span>
             </div>
 
-            <nav class="nav-menu">
-                <button class="nav-item active" data-filter="all">
-                    <i class="fa-solid fa-border-all"></i>
-                    <span>All Channels</span>
-                </button>
-                <button class="nav-item" data-filter="favorites">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Favorites</span>
-                </button>
-                <div class="nav-divider"></div>
-                <div class="group-list" id="group-list">
-                    <!-- Dynamic Groups will be loaded here -->
+            <div class="header-actions">
+                <div class="search-btn-wrapper">
+                    <button class="icon-btn" id="search-toggle"><i class="fa-solid fa-search"></i></button>
+                    <input type="text" id="search-input" placeholder="Search channels..." class="hidden">
                 </div>
+                <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-gear"></i></button>
+                <!-- Using Gear as per image usually implies settings, but we use it for theme/settings -->
+            </div>
+        </header>
+
+        <!-- Category Scroll Bar -->
+        <div class="category-bar-container">
+            <nav class="category-scroll" id="category-scroll">
+                <button class="cat-pill active" data-filter="all">
+                    <i class="fa-solid fa-border-all"></i> All Channels
+                </button>
+                <div class="nav-divider-vertical"></div>
+                <!-- Dynamic Groups -->
             </nav>
-        </aside>
+        </div>
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Header -->
-            <header class="top-bar">
-                <div class="search-container">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" id="search-input" placeholder="Find a channel...">
-                </div>
-                <!-- Optional User/Settings area -->
-                <div class="actions">
-                    <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-                </div>
-            </header>
+            <!-- Stats (Optional, kept hidden or small) -->
+            <div class="content-header" style="display:none;">
+                <h2 id="current-view-title">All Channels</h2>
+                <span class="channel-count" id="channel-count">0 channels</span>
+            </div>
 
             <!-- Channel Grid -->
-            <div class="content-area">
-                <div class="section-title">
-                    <h2 id="current-view-title">All Channels</h2>
-                    <span class="channel-count" id="channel-count">0 channels</span>
-                </div>
-
-                <div class="channel-grid" id="channel-grid">
-                    <!-- Channels will be injected here -->
-                    <div class="loading-spinner">
-                        <i class="fa-solid fa-circle-notch fa-spin"></i>
-                    </div>
+            <div class="channel-grid" id="channel-grid">
+                <!-- Channels injected here -->
+                <div class="loading-spinner">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i>
                 </div>
             </div>
         </main>

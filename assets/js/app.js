@@ -12,19 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DOM Elements ---
     const elements = {
         grid: document.getElementById('channel-grid'),
-        groupList: document.getElementById('group-list'),
+        categoryScroll: document.getElementById('category-scroll'), // Renamed from groupList
         searchInput: document.getElementById('search-input'),
+        searchToggle: document.getElementById('search-toggle'),
         viewTitle: document.getElementById('current-view-title'),
-        channelCount: document.getElementById('channel-count'),
+        // channelCount: document.getElementById('channel-count'), // Removed
         playerModal: document.getElementById('player-modal'),
         videoPlayer: document.getElementById('video-player'),
         closePlayerBtn: document.getElementById('close-player'),
         playerChannelName: document.getElementById('player-channel-name'),
         playerChannelGroup: document.getElementById('player-channel-group'),
-        playerChannelName: document.getElementById('player-channel-name'),
-        playerChannelGroup: document.getElementById('player-channel-group'),
         playerFavBtn: document.getElementById('player-fav-btn'),
-        navItems: document.querySelectorAll('.nav-item'),
+        navItems: document.querySelectorAll('.cat-pill'), // Updated class
         toastContainer: null, // Will be created dynamically
         themeToggle: document.getElementById('theme-toggle'),
         themeIcon: document.querySelector('#theme-toggle i')
@@ -110,37 +109,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Rendering ---
     function renderGroups() {
-        elements.groupList.innerHTML = '';
+        // Keep the "All Channels" button
+        const allBtn = document.querySelector('.cat-pill[data-filter="all"]');
+        elements.categoryScroll.innerHTML = '';
+        elements.categoryScroll.appendChild(allBtn);
+
         const sortedGroups = Array.from(state.groups).sort();
 
         sortedGroups.forEach(group => {
             const btn = document.createElement('button');
-            btn.className = 'nav-item';
+            btn.className = 'cat-pill';
             btn.dataset.filter = group;
-            btn.innerHTML = `<i class="fa-solid fa-layer-group"></i> <span>${group}</span>`;
+            // Use specific icon for common groups if wanted, else generic
+            let icon = 'fa-layer-group';
+            if (group.toLowerCase().includes('sport')) icon = 'fa-futbol';
+            if (group.toLowerCase().includes('news')) icon = 'fa-newspaper';
+
+            btn.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${group}</span>`;
 
             btn.addEventListener('click', (e) => {
-                // Prevent event from bubbling if using inside a drawer
-                e.stopPropagation();
-
-                // Remove active class from all other buttons (including static ones)
-                document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                // Remove active class from all
+                document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
                 state.currentFilter = group;
                 filterChannels();
             });
-            elements.groupList.appendChild(btn);
+
+            elements.categoryScroll.appendChild(btn);
         });
     }
 
     function renderChannels() {
         elements.grid.innerHTML = '';
         elements.viewTitle.innerText = getTitle(state.currentFilter);
-        elements.channelCount.innerText = `${state.filteredChannels.length} channels`;
+        // elements.channelCount.innerText = `${state.filteredChannels.length} channels`; // Removed
 
         if (state.filteredChannels.length === 0) {
-            elements.grid.innerHTML = '<div class="no-results">No channels found.</div>';
+            elements.grid.innerHTML = '<div class="no-results" style="color:var(--text-muted); padding:2rem;">No channels found matching your criteria.</div>';
             return;
         }
 
@@ -153,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Handle logo: default fallback if empty or error
             const logoUrl = channel.logo ? channel.logo : 'assets/images/default-tv.png';
 
+            // New Card Structure matched to image
             card.innerHTML = `
                 <div class="card-image">
                     <img src="${logoUrl}" alt="${channel.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=${encodeURIComponent(channel.name)}'">
@@ -160,6 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="card-info">
                     <div class="card-name" title="${channel.name}">${channel.name}</div>
                     <div class="card-group">${channel.group}</div>
+                    <div class="live-status">
+                        <div class="live-dot"></div> Live
+                    </div>
                 </div>
             `;
 
@@ -312,24 +322,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners ---
     function setupEventListeners() {
-        // Navigation (Static items: All Channels, Favorites)
-        elements.navItems.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                state.currentFilter = btn.dataset.filter;
+        // Navigation (Static items in horizontal bar)
+        const allBtn = document.querySelector('.cat-pill[data-filter="all"]');
+        if (allBtn) {
+            allBtn.addEventListener('click', () => {
+                document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+                allBtn.classList.add('active');
+                state.currentFilter = 'all';
                 filterChannels();
             });
-        });
+        }
+
+        // Search Toggle (Mobile/Desktop)
+        if (elements.searchToggle) {
+            elements.searchToggle.addEventListener('click', () => {
+                elements.searchInput.classList.toggle('hidden');
+                if (!elements.searchInput.classList.contains('hidden')) {
+                    elements.searchInput.focus();
+                }
+            });
+        }
 
         // Theme Toggle
         if (elements.themeToggle) {
             elements.themeToggle.addEventListener('click', toggleTheme);
         }
 
-        // Search
+        // Search Input
         elements.searchInput.addEventListener('input', () => {
             filterChannels();
         });
