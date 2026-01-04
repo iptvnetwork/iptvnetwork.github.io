@@ -54,9 +54,9 @@ body {
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --border: rgba(255, 255, 255, 0.08);
-  --header-h: 70px;
-  --footer-h: 40px;
   /* Added Footer Height */
+  --header-h: 100px;
+  --footer-h: 50px;
   --font-main: 'Outfit', sans-serif;
 }
 
