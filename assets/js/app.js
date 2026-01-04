@@ -1,15 +1,39 @@
-const player = document.getElementById('player');
-const playerOverlay = document.getElementById('playerOverlay');
-const currentChannelName = document.getElementById('currentChannelName');
-const currentChannelGroup = document.getElementById('currentChannelGroup');
-const channelCountEl = document.getElementById('channelCount');
-const channelsEl = document.getElementById('channels');
-const searchEl = document.getElementById('search');
+/* Component Loader */
+async function loadComponents() {
+	const components = [
+		{ id: 'comp-header', url: 'components/header.html' },
+		{ id: 'comp-nav', url: 'components/navigation.html' },
+		{ id: 'comp-player', url: 'components/player.html' },
+		{ id: 'comp-footer', url: 'components/footer.html' }
+	];
 
-// Selects
-const groupFilter = document.getElementById('groupFilter');
-const visibleGroupFilter = document.getElementById('visibleGroupFilter');
+	// Fetch all components via HTTP
+	const promises = components.map(comp =>
+		fetch(comp.url)
+			.then(res => {
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
+				return res.text();
+			})
+			.then(html => {
+				const el = document.getElementById(comp.id);
+				if (el) {
+					// Replace the placeholder div with the content (unwrapping)
+					// We use outerHTML so the div#comp-xyz disappears and is replaced by <header>, <section>, etc.
+					el.outerHTML = html;
+				}
+			})
+			.catch(err => console.error(`Failed to load ${comp.url}`, err))
+	);
 
+	await Promise.all(promises);
+	console.log('All components loaded');
+
+	// Small delay to ensure DOM update if needed, though await shouldn't need it.
+	initApp();
+}
+
+/* App Logic (Wrapped) */
+let player, playerOverlay, currentChannelName, currentChannelGroup, channelCountEl, channelsEl, searchEl, groupFilter, visibleGroupFilter;
 let channels = [];
 let hls = null;
 let activeChannel = null;
@@ -17,6 +41,49 @@ let activeChannel = null;
 const CACHE_KEY = 'iptv_channels_cache';
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 const LAST_PLAYED_KEY = 'iptv_last_played';
+
+function initApp() {
+	// Select Elements NOW, after they exist in DOM
+	player = document.getElementById('player');
+	playerOverlay = document.getElementById('playerOverlay');
+	currentChannelName = document.getElementById('currentChannelName');
+	currentChannelGroup = document.getElementById('currentChannelGroup');
+	channelCountEl = document.getElementById('channelCount');
+	channelsEl = document.getElementById('channels');
+	searchEl = document.getElementById('search');
+	groupFilter = document.getElementById('groupFilter');
+	visibleGroupFilter = document.getElementById('visibleGroupFilter');
+
+	// Attach Event Listeners
+	if (playerOverlay) {
+		playerOverlay.addEventListener('click', () => {
+			if (player.paused && activeChannel) player.play();
+		});
+	}
+
+	if (player) {
+		player.addEventListener('play', () => { if (playerOverlay) playerOverlay.style.display = 'none'; });
+		player.addEventListener('pause', () => { if (playerOverlay) playerOverlay.style.display = 'flex'; });
+	}
+
+	if (searchEl) {
+		searchEl.addEventListener('input', debounce(filterChannels, 300));
+	}
+
+	if (groupFilter) groupFilter.addEventListener('change', filterChannels);
+
+	if (visibleGroupFilter) {
+		visibleGroupFilter.addEventListener('change', () => {
+			if (groupFilter) {
+				groupFilter.value = visibleGroupFilter.value;
+				filterChannels();
+			}
+		});
+	}
+
+	// Load Data
+	loadChannels();
+}
 
 async function loadChannels() {
 	try {
@@ -27,10 +94,11 @@ async function loadChannels() {
 			channels = cached;
 		} else {
 			// 2. Fetch if no cache
-			channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--text-muted);font-size:1.2rem;margin-top:40px">Updating live channels...</div>';
+			if (channelsEl) channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--text-muted);font-size:1.2rem;margin-top:40px">Updating live channels...</div>';
 
 			const resLocal = await fetch('data/channels.json');
-			const localChannels = await resLocal.json();
+			let localChannels = [];
+			if (resLocal.ok) localChannels = await resLocal.json();
 
 			let externalChannels = [];
 			try {
@@ -41,7 +109,6 @@ async function loadChannels() {
 				}
 			} catch (err) { console.warn(err); }
 
-			// Merge & Deduplicate
 			const all = [...localChannels, ...externalChannels];
 			const unique = [];
 			const seenUrls = new Set();
@@ -61,16 +128,14 @@ async function loadChannels() {
 		buildGroupOptions();
 		renderChannels(channels);
 
-		// 3. Restore Last Played
 		restoreLastPlayed();
 
 	} catch (e) {
-		channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--primary)">Failed to load channels. <br><button onclick="location.reload()" style="margin-top:10px;padding:8px 16px;background:var(--primary);border:none;border-radius:6px;color:white;cursor:pointer">Retry</button></div>';
+		if (channelsEl) channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--primary)">Failed to load channels. <br><button onclick="location.reload()" style="margin-top:10px;padding:8px 16px;background:var(--primary);border:none;border-radius:6px;color:white;cursor:pointer">Retry</button></div>';
 		console.error(e);
 	}
 }
 
-// Cache Logic
 function getCachedChannels() {
 	const store = localStorage.getItem(CACHE_KEY);
 	if (!store) return null;
@@ -93,25 +158,16 @@ function restoreLastPlayed() {
 	if (last && channels.length) {
 		try {
 			const lastCh = JSON.parse(last);
-			// Find it in current list to ensure URL is valid/fresh
 			const found = channels.find(c => c.url === lastCh.url) || lastCh;
-
 			if (found) {
-				// Auto-select but maybe don't auto-play to respect browser policy, 
-				// or mute autoplay. Let's just set the metadata and highlight.
-				playChannel(found, null, false); // false = don't force play immediately, just setup
-
-				// Scroll to it
-				// This is tricky without the element ref, but we can search DOM if really needed.
-				// For now, just setting player state is good.
-				currentChannelName.textContent = found.name;
-				currentChannelGroup.textContent = "Resume Watching";
+				playChannel(found, null, false);
+				if (currentChannelName) currentChannelName.textContent = found.name;
+				if (currentChannelGroup) currentChannelGroup.textContent = "Resume Watching";
 			}
 		} catch (e) { }
 	}
 }
 
-// Simple M3U Parser
 function parseM3U(content, defaultGroup = 'General') {
 	const lines = content.split('\n');
 	const result = [];
@@ -164,6 +220,7 @@ function buildGroupOptions() {
 }
 
 function renderChannels(list) {
+	if (!channelsEl) return;
 	channelsEl.innerHTML = '';
 	if (!list.length) {
 		channelsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted)">No channels found.</div>';
@@ -174,8 +231,7 @@ function renderChannels(list) {
 		const card = document.createElement('div');
 		card.className = 'channel-card';
 		if (activeChannel && activeChannel.url === ch.url) card.classList.add('active');
-
-		card.onclick = () => playChannel(ch, card, true); // true = user interaction
+		card.onclick = () => playChannel(ch, card, true);
 
 		const logoWrapper = document.createElement('div');
 		logoWrapper.className = 'logo-wrapper';
@@ -206,6 +262,7 @@ function renderChannels(list) {
 }
 
 function filterChannels() {
+	if (!searchEl || !groupFilter) return;
 	const q = searchEl.value.trim().toLowerCase();
 	const group = groupFilter.value;
 
@@ -221,8 +278,6 @@ function filterChannels() {
 
 function playChannel(ch, cardEl, autoPlay = true) {
 	activeChannel = ch;
-
-	// Save Last Played
 	localStorage.setItem(LAST_PLAYED_KEY, JSON.stringify(ch));
 
 	if (window.innerWidth < 1024 && autoPlay) {
@@ -231,14 +286,9 @@ function playChannel(ch, cardEl, autoPlay = true) {
 
 	document.querySelectorAll('.channel-card').forEach(c => c.classList.remove('active'));
 	if (cardEl) cardEl.classList.add('active');
-	else {
-		// Try to find the card if not passed (e.g. restoreLastPlayed)
-		// This is expensive O(N) refind but okay for single run
-		// We could implement if needed, skipping for now to save DOM loops
-	}
 
-	currentChannelName.textContent = ch.name;
-	currentChannelGroup.textContent = ch.group || 'Live';
+	if (currentChannelName) currentChannelName.textContent = ch.name;
+	if (currentChannelGroup) currentChannelGroup.textContent = ch.group || 'Live';
 
 	const src = ch.url;
 
@@ -246,37 +296,26 @@ function playChannel(ch, cardEl, autoPlay = true) {
 		if (hls) { hls.destroy(); }
 		hls = new Hls();
 		hls.loadSource(src);
-		hls.attachMedia(player);
+		if (player) hls.attachMedia(player);
 		hls.on(Hls.Events.MANIFEST_PARSED, () => {
-			if (autoPlay) player.play().catch(e => console.log("Auto-play blocked", e));
+			if (autoPlay && player) player.play().catch(e => console.log("Auto-play blocked", e));
 		});
 	} else {
-		player.src = src;
-		if (autoPlay) player.play().catch(e => console.log("Auto-play blocked", e));
+		if (player) {
+			player.src = src;
+			if (autoPlay) player.play().catch(e => console.log("Auto-play blocked", e));
+		}
 	}
 
-	if (autoPlay) playerOverlay.style.display = 'none';
-	else playerOverlay.style.display = 'flex'; // Show play button for Resume
-}
-
-playerOverlay.addEventListener('click', () => {
-	if (player.paused && activeChannel) player.play();
-});
-
-player.addEventListener('play', () => { playerOverlay.style.display = 'none'; });
-player.addEventListener('pause', () => { playerOverlay.style.display = 'flex'; });
-
-searchEl.addEventListener('input', debounce(filterChannels, 300));
-groupFilter.addEventListener('change', filterChannels);
-if (visibleGroupFilter) {
-	visibleGroupFilter.addEventListener('change', () => {
-		groupFilter.value = visibleGroupFilter.value;
-		filterChannels();
-	});
+	if (playerOverlay) {
+		if (autoPlay) playerOverlay.style.display = 'none';
+		else playerOverlay.style.display = 'flex';
+	}
 }
 
 function debounce(fn, ms) {
 	let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) }
 }
 
-loadChannels();
+// Start Loading
+loadComponents();
