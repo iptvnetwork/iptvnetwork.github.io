@@ -92,19 +92,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Data Fetching ---
     async function fetchChannels() {
-        // Assuming data is in data/channels.json relative to index.html
-        const response = await fetch('data/channels.json');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
+        const CACHE_KEY = 'iptv_channels_data';
+        const CACHE_TIME_KEY = 'iptv_channels_time';
+        const CACHE_DURATION = 3600 * 1000; // 1 Hour
 
-        state.channels = data.map((channel, index) => ({
-            ...channel,
-            id: index, // Assign a temporary ID for easy reference
-            group: channel.group || 'Others' // Ensure group exists
-        }));
+        // Try loading from cache first using a helper to avoid stale UI if fetch takes time
+        const cached = localStorage.getItem(CACHE_KEY);
+        const cacheTime = localStorage.getItem(CACHE_TIME_KEY);
+        const now = Date.now();
+
+        if (cached && cacheTime && (now - parseInt(cacheTime) < CACHE_DURATION)) {
+            console.log('Loading channels from cache...');
+            processData(JSON.parse(cached));
+            // Background update (optional, maybe not needed if cache is fresh enough)
+            fetchFromServer(CACHE_KEY, CACHE_TIME_KEY);
+        } else {
+            console.log('Cache expired or missing, fetching from server...');
+            await fetchFromServer(CACHE_KEY, CACHE_TIME_KEY);
+        }
+    }
+
+    async function fetchFromServer(cacheKey, cacheTimeKey) {
+        try {
+            const response = await fetch('data/channels.json');
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+            // Save to cache
+            localStorage.setItem(cacheKey, JSON.stringify(data));
+            localStorage.setItem(cacheTimeKey, Date.now().toString());
+
+            processData(data);
+        } catch (e) {
+            console.error("Fetch failed", e);
+            // If fetch failed but we have stale cache, ensures we show something (already done if cached existed)
+        }
+    }
+
+    function processData(data) {
+        // Validate and Process Data
+        state.channels = data
+            .filter(ch => ch.url && ch.name) // valid channels only
+            .map((channel, index) => ({
+                ...channel,
+                id: index,
+                group: channel.group || 'Others'
+            }));
 
         // Extract unique groups
+        state.groups = new Set(); // Reset groups
         state.channels.forEach(ch => state.groups.add(ch.group));
+
+        // Re-render
+        renderGroups();
+        filterChannels();
     }
 
     // --- Rendering ---
@@ -348,9 +389,13 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.themeToggle.addEventListener('click', toggleTheme);
         }
 
-        // Search Input
+        // Search Input with Debounce
+        let debounceTimer;
         elements.searchInput.addEventListener('input', () => {
-            filterChannels();
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                filterChannels();
+            }, 300); // 300ms delay
         });
 
         // Player Controls
