@@ -270,35 +270,42 @@ body {
 /* --- Right Panel: Player --- */
 .right-panel {
   background-color: #000;
-  /* Theatre mode background */
-  overflow-y: auto;
-  position: fixed;
+  overflow: hidden;
+  /* Fix: Prevent scrolling */
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  /* Full bleed or padded? User said fit video. */
+  justify-content: center;
+  /* Vertically center the content */
+  padding: 20px;
 }
 
 .sticky-player-wrapper {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  /* Spacing between video and info */
+  align-items: center;
 }
 
 /* Video Container */
 .video-container {
   width: 100%;
-  /* Responsive sizing safety logic */
-  max-width: calc((100vh - var(--header-height) - var(--footer-height) - 40px) * (16 / 9));
-  aspect-ratio: 16/9;
+  /* 
+     Smart Fit Calculation:
+     Height Available = 100vh - Header(100) - Footer(50)
+     Minus: Padding(20*2) + InfoGap(16) + InfoHeight(approx 80) = ~140px extra space needed.
+     Total Deduction from Viewport = 150 (layout) + 140 (internal) = 290px safe buffer.
+  */
+  max-width: calc((100vh - 290px) * (16 / 9));
 
+  aspect-ratio: 16/9;
   background: black;
   position: relative;
-  margin: 0 auto;
-
-  /* Styling touches */
+  border-radius: 16px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 video {
@@ -306,7 +313,6 @@ video {
   height: 100%;
   display: block;
   object-fit: fill;
-  /* Force fill as requested */
 }
 
 /* Overlays */
@@ -323,8 +329,8 @@ video {
 }
 
 .play-btn {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   background: var(--primary);
   color: white;
   border-radius: 50%;
@@ -341,29 +347,34 @@ video {
 
 /* Play Info (Below Video) */
 .now-playing-info {
-  padding: 24px;
-  background: var(--bg-body);
-  border-top: 1px solid var(--border-color);
-  flex: 1;
-  /* Fill remaining space in right panel */
+  width: 100%;
+  max-width: calc((100vh - 290px) * (16 / 9));
+  /* Match video width */
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .now-playing-info h2 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
   color: #fff;
 }
 
 .channel-tag {
-  display: inline-block;
-  background: var(--bg-panel);
+  background: rgba(14, 165, 233, 0.1);
   border: 1px solid var(--primary);
   padding: 4px 12px;
-  border-radius: 6px;
+  border-radius: 20px;
   color: var(--primary);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
+  margin: 0;
 }
 
 /* --- Header Specifics --- */
