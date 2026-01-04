@@ -1,0 +1,32 @@
+name: Daily Channel Update
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # 4:00 AM UTC every day
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-channels:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write # Need write permission to push changes
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Run update script
+      run: python scripts/update_channels.py
+      
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add data/channels.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update channels [skip ci]" && git push)
