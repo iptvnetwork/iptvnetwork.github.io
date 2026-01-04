@@ -90,6 +90,7 @@ body {
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
   z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -268,7 +269,7 @@ body {
 
 /* --- Right Panel: Player --- */
 .right-panel {
-  background-color: #000;
+  background-color: transparent;
   overflow: hidden;
   /* Fix: Prevent scrolling */
   position: relative;
@@ -293,7 +294,6 @@ body {
   width: 100%;
   /* Removed max-width calculation to force full width fill as requested. */
   aspect-ratio: 16/9;
-  background: transparent;
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
