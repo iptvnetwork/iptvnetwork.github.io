@@ -272,7 +272,7 @@ body {
   background-color: #000;
   /* Theatre mode background */
   overflow-y: auto;
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   padding: 0;
