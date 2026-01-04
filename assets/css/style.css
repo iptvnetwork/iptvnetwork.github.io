@@ -3,8 +3,8 @@
    ========================================= */
 :root {
   /* Dimensions */
-  --header-height: 100px;
-  --footer-height: 50px;
+  --header-height: 70px;
+  --footer-height: 30px;
 
   /* Colors (Modern Dark Theme) */
   --primary: #0ea5e9;
@@ -339,9 +339,7 @@ video {
 
 /* Play Info (Below Video) */
 .now-playing-info {
-  width: 100%;
-  max-width: calc((100vh - 290px) * (16 / 9));
-  /* Match video width */
+  width: auto;
   background: rgba(255, 255, 255, 0.03);
   padding: 16px 24px;
   border-radius: 12px;
@@ -367,14 +365,6 @@ video {
   font-size: 0.8rem;
   font-weight: 500;
   margin: 0;
-}
-
-/* --- Header Specifics --- */
-:root {
-  /* Dimensions */
-  --header-height: 70px;
-  /* Compacted from 100px */
-  --footer-height: 50px;
 }
 
 .brand {
