@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredChannels: [],
         groups: new Set(),
         currentFilter: 'all', // 'all', 'favorites', or specific group name
-        favorites: new Set(JSON.parse(localStorage.getItem('iptv_favorites')) || [])
+        favorites: new Set(JSON.parse(localStorage.getItem('iptv_favorites')) || []),
+        theme: localStorage.getItem('iptv_theme') || 'dark'
     };
 
     // --- DOM Elements ---
@@ -20,9 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
         closePlayerBtn: document.getElementById('close-player'),
         playerChannelName: document.getElementById('player-channel-name'),
         playerChannelGroup: document.getElementById('player-channel-group'),
+        playerChannelName: document.getElementById('player-channel-name'),
+        playerChannelGroup: document.getElementById('player-channel-group'),
         playerFavBtn: document.getElementById('player-fav-btn'),
         navItems: document.querySelectorAll('.nav-item'),
-        toastContainer: null // Will be created dynamically
+        toastContainer: null, // Will be created dynamically
+        themeToggle: document.getElementById('theme-toggle'),
+        themeIcon: document.querySelector('#theme-toggle i')
     };
 
     let hls = null;
@@ -32,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function init() {
         createToastContainer();
+        applyTheme();
         renderSkeletons(); // Show loading state
 
         try {
@@ -113,12 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.dataset.filter = group;
             btn.innerHTML = `<i class="fa-solid fa-layer-group"></i> <span>${group}</span>`;
 
-            btn.addEventListener('click', () => {
-                setActiveNav(btn);
+            btn.addEventListener('click', (e) => {
+                // Prevent event from bubbling if using inside a drawer
+                e.stopPropagation();
+
+                // Remove active class from all other buttons (including static ones)
+                document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
                 state.currentFilter = group;
                 filterChannels();
             });
-
             elements.groupList.appendChild(btn);
         });
     }
@@ -284,17 +295,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Theme Logic ---
+    function applyTheme() {
+        document.body.classList.remove('light-theme', 'dark-theme');
+        document.body.classList.add(`${state.theme}-theme`);
+        if (elements.themeIcon) {
+            elements.themeIcon.className = state.theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        }
+    }
+
+    function toggleTheme() {
+        state.theme = state.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('iptv_theme', state.theme);
+        applyTheme();
+    }
+
     // --- Event Listeners ---
     function setupEventListeners() {
-        // Navigation (All Channels & Favorites)
+        // Navigation (Static items: All Channels, Favorites)
         elements.navItems.forEach(btn => {
-            // These are the static ones in HTML
-            btn.addEventListener('click', () => {
-                setActiveNav(btn);
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
                 state.currentFilter = btn.dataset.filter;
                 filterChannels();
             });
         });
+
+        // Theme Toggle
+        if (elements.themeToggle) {
+            elements.themeToggle.addEventListener('click', toggleTheme);
+        }
 
         // Search
         elements.searchInput.addEventListener('input', () => {

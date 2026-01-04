@@ -24,6 +24,20 @@
     --transition: all 0.3s ease;
 }
 
+body.light-mode {
+    --bg-body: #f0f2f5;
+    --bg-sidebar: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8f9fa;
+    --bg-input: #f0f2f5;
+
+    --text-main: #1a1a1a;
+    --text-muted: #65676b;
+
+    --border: rgba(0, 0, 0, 0.08);
+    --glass: rgba(0, 0, 0, 0.05);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -117,6 +131,8 @@ body {
 
 .nav-item.active {
     background-color: var(--accent);
+    color: #ffffff;
+    /* Always white text on active accent */
     box-shadow: 0 4px 15px var(--accent-glow);
 }
 
