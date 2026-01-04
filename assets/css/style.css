@@ -292,14 +292,7 @@ body {
 /* Video Container */
 .video-container {
   width: 100%;
-  /* 
-     Smart Fit Calculation:
-     Height Available = 100vh - Header(100) - Footer(50)
-     Minus: Padding(20*2) + InfoGap(16) + InfoHeight(approx 80) = ~140px extra space needed.
-     Total Deduction from Viewport = 150 (layout) + 140 (internal) = 290px safe buffer.
-  */
-  max-width: calc((100vh - 290px) * (16 / 9));
-
+  /* Removed max-width calculation to force full width fill as requested. */
   aspect-ratio: 16/9;
   background: black;
   position: relative;
