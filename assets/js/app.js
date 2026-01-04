@@ -33,7 +33,7 @@ async function loadComponents() {
 }
 
 /* App Logic (Wrapped) */
-let player, playerOverlay, currentChannelName, currentChannelGroup, channelCountEl, channelsEl, searchEl, groupFilter, visibleGroupFilter;
+let player, playerOverlay, currentChannelName, currentChannelGroup, channelCountEl, channelsEl, searchEl, groupFilter, visibleGroupFilter, suggestionsEl;
 let channels = [];
 let hls = null;
 let activeChannel = null;
@@ -51,6 +51,7 @@ function initApp() {
 	channelCountEl = document.getElementById('channelCount');
 	channelsEl = document.getElementById('channels');
 	searchEl = document.getElementById('search');
+	suggestionsEl = document.getElementById('searchSuggestions'); // New
 	groupFilter = document.getElementById('groupFilter');
 	visibleGroupFilter = document.getElementById('visibleGroupFilter');
 
@@ -67,7 +68,21 @@ function initApp() {
 	}
 
 	if (searchEl) {
-		searchEl.addEventListener('input', debounce(filterChannels, 300));
+		searchEl.addEventListener('input', debounce((e) => {
+			filterChannels(); // Live filter grid
+			updateSuggestions(e.target.value); // Show suggestions
+		}, 300));
+
+		// Hide suggestions on click outside
+		document.addEventListener('click', (e) => {
+			if (suggestionsEl && !searchEl.contains(e.target) && !suggestionsEl.contains(e.target)) {
+				suggestionsEl.classList.remove('show');
+			}
+		});
+
+		searchEl.addEventListener('focus', () => {
+			if (searchEl.value.trim().length > 0) updateSuggestions(searchEl.value);
+		});
 	}
 
 	if (groupFilter) groupFilter.addEventListener('change', filterChannels);
@@ -83,6 +98,49 @@ function initApp() {
 
 	// Load Data
 	loadChannels();
+}
+
+function updateSuggestions(query) {
+	if (!suggestionsEl) return;
+	const q = query.trim().toLowerCase();
+
+	if (q.length < 2) {
+		suggestionsEl.classList.remove('show');
+		return;
+	}
+
+	// Find top 5 matches
+	const matches = channels.filter(c =>
+		(c.name && c.name.toLowerCase().includes(q)) ||
+		(c.group && c.group.toLowerCase().includes(q))
+	).slice(0, 5);
+
+	if (matches.length === 0) {
+		suggestionsEl.classList.remove('show');
+		return;
+	}
+
+	suggestionsEl.innerHTML = '';
+	matches.forEach(ch => {
+		const item = document.createElement('div');
+		item.className = 'suggestion-item';
+		item.innerHTML = `
+			<img src="${ch.logo || 'https://via.placeholder.com/40'}" class="suggestion-logo" onerror="this.src='https://via.placeholder.com/40?text=TV'">
+			<div class="suggestion-info">
+				<span class="suggestion-name">${ch.name}</span>
+				<span class="suggestion-group">${ch.group || 'Live'}</span>
+			</div>
+		`;
+		item.onclick = () => {
+			playChannel(ch, null, true);
+			searchEl.value = ch.name;
+			filterChannels(); // Update grid to show only this result? Or reset? Let's just update grid.
+			suggestionsEl.classList.remove('show');
+		};
+		suggestionsEl.appendChild(item);
+	});
+
+	suggestionsEl.classList.add('show');
 }
 
 async function loadChannels() {
