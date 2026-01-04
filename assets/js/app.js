@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         groups: new Set(),
         currentFilter: 'all', // 'all', 'favorites', or specific group name
         favorites: new Set(JSON.parse(localStorage.getItem('iptv_favorites')) || []),
-        theme: localStorage.getItem('iptv_theme') || 'dark'
+        theme: localStorage.getItem('iptv_theme') || 'dark',
+        visibleCount: 40,
+        batchSize: 40,
+        updateInterval: null
     };
 
     // --- DOM Elements ---
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let hls = null;
+    let observer = null;
 
     // --- Initialization ---
     init();
@@ -39,13 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme();
         renderSkeletons(); // Show loading state
 
-        try {
-            // Simulate network delay for premium feel (optional, removing helps speed but skeleton looks nice)
-            // await new Promise(r => setTimeout(r, 800)); 
+        // Setup Infinite Scroll Observer
+        observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                loadMoreChannels();
+            }
+        }, { rootMargin: '200px' });
 
+        try {
             await fetchChannels();
-            renderGroups();
-            filterChannels(); // Initial render
+
+            // Start Auto-Update Checker (every 10 minutes)
+            setInterval(checkUpdates, 10 * 60 * 1000);
+
             setupEventListeners();
         } catch (error) {
             console.error('Failed to initialize app', error);
@@ -129,10 +139,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function checkUpdates() {
+        console.log("Checking for updates...");
+        try {
+            const response = await fetch('data/channels.json');
+            if (!response.ok) return;
+            const data = await response.json();
+
+            const CACHE_KEY = 'iptv_channels_data';
+            const currentCache = localStorage.getItem(CACHE_KEY);
+
+            if (currentCache !== JSON.stringify(data)) {
+                console.log("Updates found!");
+                showToast("Updating channel list...", "fa-rotate");
+
+                // Update Cache and State
+                localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+                localStorage.setItem('iptv_channels_time', Date.now().toString());
+
+                processData(data);
+            }
+        } catch (e) { console.warn("Auto-update check failed", e); }
+    }
+
     function processData(data) {
-        // Validate and Process Data
+        // Validate and Process Data (Strict Mode: Must have URL and Name)
         state.channels = data
-            .filter(ch => ch.url && ch.name) // valid channels only
+            .filter(ch => ch.url && ch.url.trim() !== "" && ch.name && ch.name.trim() !== "")
             .map((channel, index) => ({
                 ...channel,
                 id: index,
@@ -141,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Extract unique groups
         state.groups = new Set(); // Reset groups
-        state.channels.forEach(ch => state.groups.add(ch.group));
+        state.channels.forEach(ch => state.channels.length > 0 && state.groups.add(ch.group));
 
         // Re-render
         renderGroups();
@@ -181,26 +214,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderChannels() {
-        elements.grid.innerHTML = '';
+    // --- Filtering Logic ---
+    function filterChannels() {
+        const query = elements.searchInput.value.toLowerCase();
+
+        state.filteredChannels = state.channels.filter(ch => {
+            const matchesGroup = state.currentFilter === 'all' || ch.group === state.currentFilter;
+            const matchesSearch = ch.name.toLowerCase().includes(query) || ch.group.toLowerCase().includes(query);
+            return matchesGroup && matchesSearch;
+        });
+
+        // Reset visible count on filter change
+        state.visibleCount = state.batchSize;
+        renderChannels();
+    }
+
+    function renderChannels(append = false) {
         elements.viewTitle.innerText = getTitle(state.currentFilter);
-        // elements.channelCount.innerText = `${state.filteredChannels.length} channels`; // Removed
+
+        // If not appending (i.e., fresh filter), clear grid
+        if (!append) {
+            elements.grid.innerHTML = '';
+            window.scrollTo(0, 0);
+        } else {
+            const oldSentinel = document.getElementById('scroll-sentinel');
+            if (oldSentinel) oldSentinel.remove();
+        }
 
         if (state.filteredChannels.length === 0) {
             elements.grid.innerHTML = '<div class="no-results" style="color:var(--text-muted); padding:2rem;">No channels found matching your criteria.</div>';
             return;
         }
 
+        // Slice data
+        let batch;
+        if (append) {
+            batch = state.filteredChannels.slice(state.visibleCount - state.batchSize, state.visibleCount);
+        } else {
+            // First batch
+            batch = state.filteredChannels.slice(0, state.batchSize);
+        }
+
         const fragment = document.createDocumentFragment();
 
-        state.filteredChannels.forEach(channel => {
+        batch.forEach(channel => {
             const card = document.createElement('div');
             card.className = 'channel-card';
 
-            // Handle logo: default fallback if empty or error
             const logoUrl = channel.logo ? channel.logo : 'assets/images/default-tv.png';
 
-            // New Card Structure matched to image
             card.innerHTML = `
                 <div class="card-image">
                     <img src="${logoUrl}" alt="${channel.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=${encodeURIComponent(channel.name)}'">
@@ -219,26 +281,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         elements.grid.appendChild(fragment);
+
+        // Add Sentinel if more items exist
+        if (state.visibleCount < state.filteredChannels.length) {
+            const sentinel = document.createElement('div');
+            sentinel.id = 'scroll-sentinel';
+            sentinel.style.height = '20px';
+            sentinel.style.width = '100%';
+            elements.grid.appendChild(sentinel);
+            observer.observe(sentinel);
+        }
     }
 
-    // --- Filtering Logic ---
-    function filterChannels() {
-        const query = elements.searchInput.value.toLowerCase();
-
-        state.filteredChannels = state.channels.filter(ch => {
-            // Text Search
-            const matchesSearch = ch.name.toLowerCase().includes(query) ||
-                ch.group.toLowerCase().includes(query);
-
-            if (!matchesSearch) return false;
-
-            // Category Filter
-            if (state.currentFilter === 'all') return true;
-            if (state.currentFilter === 'favorites') return state.favorites.has(ch.url); // Use URL as unique key for favs
-            return ch.group === state.currentFilter;
-        });
-
-        renderChannels();
+    function loadMoreChannels() {
+        if (state.visibleCount >= state.filteredChannels.length) return;
+        state.visibleCount += state.batchSize;
+        renderChannels(true); // Append mode
     }
 
     function getTitle(filter) {
