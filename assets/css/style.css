@@ -205,7 +205,8 @@ body {
 
 .channel-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Reduced min-width to 160px for better fit */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1.5rem;
     padding-bottom: 2rem;
 }
@@ -214,7 +215,6 @@ body {
 .channel-card {
     background-color: var(--bg-card-bottom);
     border-radius: var(--radius-lg);
-    /* Slightly more rounded */
     overflow: hidden;
     cursor: pointer;
     transition: var(--transition);
@@ -222,8 +222,8 @@ body {
     flex-direction: column;
     border: 1px solid var(--border);
     position: relative;
-    /* Aspect ratio for the whole card */
-    aspect-ratio: 16/14;
+    height: 100%;
+    /* Ensure full height in grid */
 }
 
 .channel-card:hover {
@@ -234,8 +234,9 @@ body {
 
 .card-image {
     background-color: var(--bg-card-top);
-    /* White top area */
-    flex: 1;
+    /* Fixed height for uniformity */
+    height: 140px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,9 +284,7 @@ body {
 }
 
 /* Live Indicator */
-.card-image::after {
-    /* Alternative: put it in the footer like the image */
-}
+/* Removed empty card-image::after ruleset */
 
 /* Custom Live Status in Footer */
 .live-status {
@@ -304,6 +303,24 @@ body {
     background-color: #22c55e;
     border-radius: 50%;
     box-shadow: 0 0 8px #22c55e;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* --- Player & Toast (Keep Existing) --- */
