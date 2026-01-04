@@ -259,16 +259,21 @@ body {
 
 .video-container {
   width: 100%;
-  max-width: 860px;
-  /* Fixed robust size for desktop */
+  /* max-width removed to fill 60% panel */
   aspect-ratio: 16/9;
   background: #000;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 0 auto;
-  /* Center in the 60% panel */
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  /* Force video to stretch and fit container */
 }
 
 .player-overlay {
