@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         playerChannelName: document.getElementById('player-channel-name'),
         playerChannelGroup: document.getElementById('player-channel-group'),
         playerFavBtn: document.getElementById('player-fav-btn'),
-        navItems: document.querySelectorAll('.nav-item')
+        navItems: document.querySelectorAll('.nav-item'),
+        toastContainer: null // Will be created dynamically
     };
 
     let hls = null;
@@ -30,7 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 
     async function init() {
+        createToastContainer();
+        renderSkeletons(); // Show loading state
+
         try {
+            // Simulate network delay for premium feel (optional, removing helps speed but skeleton looks nice)
+            // await new Promise(r => setTimeout(r, 800)); 
+
             await fetchChannels();
             renderGroups();
             filterChannels(); // Initial render
@@ -39,6 +46,43 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Failed to initialize app', error);
             elements.grid.innerHTML = '<div class="error-msg">Failed to load channels. Please try again later.</div>';
         }
+    }
+
+    function createToastContainer() {
+        const container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+        elements.toastContainer = container;
+    }
+
+    function showToast(message, icon = 'fa-info-circle') {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+
+        elements.toastContainer.appendChild(toast);
+
+        // Trigger reflow
+        toast.offsetHeight;
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400); // Wait for transition
+        }, 3000);
+    }
+
+    function renderSkeletons() {
+        elements.grid.innerHTML = '';
+        const fragment = document.createDocumentFragment();
+        // Show 12 skeleton cards
+        for (let i = 0; i < 12; i++) {
+            const div = document.createElement('div');
+            div.className = 'skeleton skeleton-card';
+            fragment.appendChild(div);
+        }
+        elements.grid.appendChild(fragment);
     }
 
     // --- Data Fetching ---
@@ -214,8 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleFavorite(url) {
         if (state.favorites.has(url)) {
             state.favorites.delete(url);
+            showToast('Removed from Favorites', 'fa-heart-crack');
         } else {
             state.favorites.add(url);
+            showToast('Added to Favorites', 'fa-heart');
         }
 
         localStorage.setItem('iptv_favorites', JSON.stringify([...state.favorites]));
