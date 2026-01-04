@@ -264,12 +264,25 @@ body {
   width: 100%;
 }
 
-/* Video Container - No max-width as requested */
+/* Video Container - Responsive Fit */
 .video-container {
   width: 100%;
+  /* Max Width Calculation: 
+     Ensure height (w * 9/16) never exceeds available vertical space.
+     Space = 100vh - Header(100) - Footer(50) - Padding(40) - Buffer(20) = approx 210px deduction.
+     Formula: MaxWidth = (100vh - 210px) * (16/9)
+  */
+  max-width: calc((100vh - var(--header-height) - var(--footer-height) - 60px) * (16 / 9));
+
   aspect-ratio: 16/9;
   background: black;
   position: relative;
+  margin: 0 auto;
+  /* Center in panel */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 video {
