@@ -30,10 +30,10 @@
     "url": "http://103.167.255.18:8085/play/a0lk/index.m3u8"
   },
   {
-    "name": "InTrouble [Geo-blocked]",
+    "name": "InTrouble (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/a40chFI.png",
     "group": "Auto;Outdoor;Sports",
-    "url": "https://amg00861-terncloud-amg00861c6-cineverse-us-964.playouts.now.amagi.tv/playlist/amg00861-terninternationalfast-introublehd-cineverseus/playlist.m3u8"
+    "url": "https://amg00861-amg00861c6-rlaxx-uk-3951.playouts.now.amagi.tv/playlist.m3u8"
   },
   {
     "name": "CNBC Awaaz (1080p)",
@@ -1914,12 +1914,6 @@
     "url": "https://stream.galaxyott.live/live/suriyantv/index.m3u8"
   },
   {
-    "name": "Tata Sky Bollywood Premiere (1080p)",
-    "logo": "https://i.imgur.com/VngCqQB.png",
-    "group": "Movies",
-    "url": "http://103.178.78.151:7505/play/a1vu/index.m3u8"
-  },
-  {
     "name": "Thalaa TV (1080p)",
     "logo": "https://d229kpbsb5jevy.cloudfront.net/yuppfast/content/common/channel/logos/thalaa-tv.png",
     "group": "Movies",
@@ -2326,6 +2320,12 @@
     "logo": "https://i.imgur.com/FvEp1S2.png",
     "group": "News",
     "url": "https://live.x2.co.th/live/13livetv-th.m3u8"
+  },
+  {
+    "name": "22Scope News (1080p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/22Scope_News.png",
+    "group": "News",
+    "url": "https://thelegitpro.in/HDlive/22scope/index.fmp4.m3u8"
   },
   {
     "name": "24 News (396p)",
@@ -5904,10 +5904,10 @@
     "url": "https://59d39900ebfb8.streamlock.net/rcv/rcv/playlist.m3u8"
   },
   {
-    "name": "RDN (720p)",
+    "name": "RDN (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/x02CGSW.png",
     "group": "News",
-    "url": "https://vdo2.streamgato.us:3278/live/rdntvlive.m3u8"
+    "url": "https://mlb.essastream.com:8081/rdntv/tracks-v1a1/mono.m3u8"
   },
   {
     "name": "RDX Goa (720p)",
@@ -6184,6 +6184,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SAKSHI_TV/images/LOGO_HD/image.png",
     "group": "News",
     "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/sakshi_nim_https/240122/sakshi/playlist.m3u8"
+  },
+  {
+    "name": "Salaam TV (720p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SALAAM_TV/images/LOGO_HD/image.png",
+    "group": "News",
+    "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeesalaam/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/426c6db7-595e-4aa8-859c-7e86ed2811d0/af896be5-4743-41fc-8b6a-eb05e44f3a6e/3.m3u8"
   },
   {
     "name": "Samachar Plus (1080p)",
@@ -6732,10 +6738,10 @@
     "url": "https://mblesmain01.telesur.ultrabase.net/mbliveMain/hd/playlist.m3u8"
   },
   {
-    "name": "Televisi\u00f3n del Este (720p)",
+    "name": "Television del Este (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/mmjbcGr.png",
     "group": "News",
-    "url": "https://vdo2.streamgato.us:3632/live/televisiondelestelive.m3u8"
+    "url": "https://mlb.essastream.com:8081/televisiondeleste/tracks-v1a1/mono.m3u8"
   },
   {
     "name": "Tempo Afric TV (720p)",
@@ -6976,6 +6982,12 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
     "group": "News",
     "url": "http://143.244.60.30/FL_Tampa_ABC/index.m3u8"
+  },
+  {
+    "name": "WGGS-DT2 (720p)",
+    "logo": "https://i.imgur.com/UfN6aAi.png",
+    "group": "News",
+    "url": "https://content.uplynk.com/channel/1f93c13275024afb9e0ead299624073d.m3u8"
   },
   {
     "name": "WION (1080p)",
