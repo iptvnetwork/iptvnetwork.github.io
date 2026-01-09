@@ -2682,6 +2682,12 @@
     "url": "https://keralive.com/yupp/tv.php?c=anb-news&e=.m3u8"
   },
   {
+    "name": "ANC (1080p)",
+    "logo": "https://i.imgur.com/odwRbRk.png",
+    "group": "News",
+    "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-anc-global-dash-abscbnono/index.mpd"
+  },
+  {
     "name": "ANN News (720p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/annnewssrt.png",
     "group": "News",
@@ -7884,12 +7890,6 @@
     "url": "http://91.132.74.5:8000/play/a00k"
   },
   {
-    "name": "Arryadia (480p)",
-    "logo": "https://i.imgur.com/XjzK3gZ.png",
-    "group": "Sports",
-    "url": "https://oppomu.serv00.net/maroo44/maarry.php?m3u8"
-  },
-  {
     "name": "Awapa Sports TV (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/MNw5cJH.jpg",
     "group": "Sports",
@@ -8520,6 +8520,12 @@
     "url": "http://194.76.186.33:8000/play/a04d/index.m3u8"
   },
   {
+    "name": "Meridiano TV",
+    "logo": "https://i.imgur.com/I6gsUqD.png",
+    "group": "Sports",
+    "url": "https://e1.viginet.vectormax.com:5210/quickstart/114-934-21/index.m3u8"
+  },
+  {
     "name": "Monterrico TV (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/SuVO9T7.png",
     "group": "Sports",
@@ -8998,6 +9004,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_5/images/LOGO_HD/image.png",
     "group": "Sports",
     "url": "http://103.178.78.151:7505/play/a1qa/index.m3u8"
+  },
+  {
+    "name": "Sportdigital FUSSBALL HD (1080p)",
+    "logo": "https://i.imgur.com/NDbWxqF.png",
+    "group": "Sports",
+    "url": "https://d162h6qqsk8wvl.cloudfront.net/8c880c40-991d-4253-aae9-754f1ed050ce/manifest.m3u8"
   },
   {
     "name": "Sportitalia (720p) [Geo-blocked]",
