@@ -3475,7 +3475,7 @@
   },
   {
     "name": "CDNN 23 (1080p) [Not 24/7]",
-    "logo": "https://i.ibb.co/6PW0s75/Cdnn23.png",
+    "logo": "https://i.imgur.com/7CNzlB6.png",
     "group": "News",
     "url": "https://cootv.cootel.com.ni:8095/Canal23_CooTel/playlist.m3u8"
   },
@@ -4654,12 +4654,6 @@
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Jai_Maharashtra.png",
     "group": "News",
     "url": "https://cdn-3.pishow.tv/live/1465/master.m3u8"
-  },
-  {
-    "name": "Jamuna TV (720p) [Geo-blocked]",
-    "logo": "https://www.jamuna.tv/wp-content/themes/jtv-news/img/logo.png",
-    "group": "News",
-    "url": "http://113.212.111.246:8080/hls/col12.m3u8"
   },
   {
     "name": "Janam TV (576p)",
@@ -9280,12 +9274,6 @@
     "logo": "https://i.imgur.com/l5PBcKN.png",
     "group": "Sports",
     "url": "http://cdn.tvmatic.net/fight.m3u8"
-  },
-  {
-    "name": "TVP Sport (1080p)",
-    "logo": "https://i.imgur.com/JUZDOCO.png",
-    "group": "Sports",
-    "url": "https://turbotv.tv/play/link/c28f5f5d-8830-4768-9452-733a1d80646f/eyJpdiI6Ik02dExRMUpoVThnUUFDYXZnSm5QbXc9PSIsInZhbHVlIjoiR2E3cysyRTJnQXVUanhsR3hxdXdHUGlkSzZsZFJiSkZ5b00xdjVTckIwTDV5cW53OE03WW9tRmg2RGxDZWZtTm9BSXZsVnVwSHpRK0Y1UnlnK3hOZGUxSVN6azlBNzI2N2FvdHBUQnlXUFk9IiwibWFjIjoiYzRhOTZhY2Y1ZjBmMzFkMWQzODJlNGY0ZjIzYWFmMjVlNDBmNjhjYmM1YzJhODQxNGY4ZjNmZTJmOTFhZTU1MiIsInRhZyI6IiJ9.m3u8"
   },
   {
     "name": "TVRI Sport (720p)",
