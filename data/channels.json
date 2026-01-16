@@ -492,10 +492,22 @@
     "url": "http://66.102.120.18:8000/play/a014/index.m3u8"
   },
   {
+    "name": "Colors Infinity (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_INFINITY/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://103.140.254.2:3500/live/1325.m3u8"
+  },
+  {
     "name": "Colors Kannada (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_KANNADA_HD/images/LOGO_HD/image.png",
     "group": "Entertainment",
     "url": "http://103.140.254.2:3500/live/757.m3u8"
+  },
+  {
+    "name": "Colors Kannada (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_KANNADA/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://103.140.254.2:3500/live/1370.m3u8"
   },
   {
     "name": "Colors Marathi (1080p)",
@@ -504,10 +516,22 @@
     "url": "http://103.140.254.2:3500/live/755.m3u8"
   },
   {
+    "name": "Colors Marathi (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_MARATHI/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://103.140.254.2:3500/live/1326.m3u8"
+  },
+  {
     "name": "Colors Super (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_SUPER/images/LOGO_HD/image.png",
     "group": "Entertainment",
     "url": "http://103.140.254.2:3500/live/785.m3u8"
+  },
+  {
+    "name": "Colors Tamil (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_TAMIL/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://103.140.254.2:3500/live/1371.m3u8"
   },
   {
     "name": "Colors Tamil HD (1080p)",
@@ -874,6 +898,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_VISSA_TV/images/LOGO_HD/image.png",
     "group": "Entertainment",
     "url": "http://103.140.254.2:3500/live/734.m3u8"
+  },
+  {
+    "name": "Zee Bangla (360p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_BANGLA_HD/images/LOGO_HD/LOGO_HD_image.png",
+    "group": "Entertainment",
+    "url": "http://103.140.254.2:3500/live/625.m3u8"
   },
   {
     "name": "Zee Dil Se (1080p)",
@@ -1674,6 +1704,12 @@
     "url": "https://live-bhojpuri.akamaized.net/liveabr/playlist.m3u8"
   },
   {
+    "name": "Colors Bangla Cinema (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_BANGLA_CINEMA/images/LOGO_HD/image.png",
+    "group": "Movies",
+    "url": "http://103.140.254.2:3500/live/1657.m3u8"
+  },
+  {
     "name": "Colors Cineplex (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_CINEPLEX/images/LOGO_HD/image.png",
     "group": "Movies",
@@ -1702,6 +1738,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_GUJARATI_CINEMA/images/LOGO_HD/image.png",
     "group": "Movies",
     "url": "http://103.140.254.2:3500/live/1324.m3u8"
+  },
+  {
+    "name": "Colors Kannada Cinema (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_KANNADA_CINEMA/images/LOGO_HD/image.png",
+    "group": "Movies",
+    "url": "http://103.140.254.2:3500/live/1632.m3u8"
   },
   {
     "name": "Dhamaka Movies B4U (576p)",
@@ -6330,12 +6372,6 @@
     "url": "https://trn09.bozztv.com/gin-sterk/index.m3u8"
   },
   {
-    "name": "Subhavaartha TV (720p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUBHAVAARTHA/images/LOGO_HD/image.png",
-    "group": "News",
-    "url": "https://2mk9qae4rwyb-hls-live.wmncdn.net/shubhavartha/live.stream/playlist.m3u8"
-  },
-  {
     "name": "Suceso TV [Not 24/7]",
     "logo": "https://i.imgur.com/BwRNes1.png",
     "group": "News",
@@ -7756,6 +7792,18 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SHALOM_TV/images/LOGO_HD/image.png",
     "group": "Religious",
     "url": "https://d2c4zqo2rb5uf1.cloudfront.net/master.m3u8"
+  },
+  {
+    "name": "Shubhsandesh TV (720p) [Not 24/7]",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SHUBHSANDESH_TV/images/LOGO_HD/image.png",
+    "group": "Religious",
+    "url": "https://6284rn2xr7xv-hls-live.wmncdn.net/shubhsandeshtv1/live123.stream/index.m3u8"
+  },
+  {
+    "name": "Subhavaartha TV (720p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUBHAVAARTHA/images/LOGO_HD/image.png",
+    "group": "Religious",
+    "url": "https://2mk9qae4rwyb-hls-live.wmncdn.net/shubhavartha/live.stream/playlist.m3u8"
   },
   {
     "name": "Total Bhakti (1080p)",
@@ -9718,12 +9766,6 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SHUBH_TV/images/LOGO_HD/image.png",
     "group": "Undefined",
     "url": "https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8"
-  },
-  {
-    "name": "Shubhsandesh TV (720p) [Not 24/7]",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SHUBHSANDESH_TV/images/LOGO_HD/image.png",
-    "group": "Undefined",
-    "url": "https://6284rn2xr7xv-hls-live.wmncdn.net/shubhsandeshtv1/live123.stream/index.m3u8"
   },
   {
     "name": "Tamil Vision TV (1080p)",
