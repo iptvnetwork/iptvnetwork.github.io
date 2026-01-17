@@ -3588,6 +3588,12 @@
     "url": "http://seb.sason.top/sc/hsxw_fhd.m3u8"
   },
   {
+    "name": "CTV3 (720p)",
+    "logo": "https://i.imgur.com/8UlIKtS.png",
+    "group": "News",
+    "url": "https://streamer2.nexgen.bz/03-CTVOW/index.m3u8"
+  },
+  {
     "name": "CTVN AKD Plus (1080p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/CTVN_AKD_Plus.png",
     "group": "News",
@@ -4069,7 +4075,7 @@
   },
   {
     "name": "Euronews",
-    "logo": "https://i.imgur.com/8t9mdg9.png",
+    "logo": "https://staticcyl.euronews.com/wp-content/uploads/2023/03/Logo_Euronews_white-on-neon_german_RGB.png",
     "group": "News",
     "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6639d7d4b18d700008da5316/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1d8ac5-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=c0d21e0b-3cc9-4c67-81b6-e33e50a7d888"
   },
@@ -4926,6 +4932,12 @@
     "url": "https://goliveafrica.media:9998/live/62580e144eb43/index.m3u8"
   },
   {
+    "name": "Love Television (720p)",
+    "logo": "https://i.imgur.com/nT3Wxr6.png",
+    "group": "News",
+    "url": "https://streamer2.nexgen.bz/01-LOVE/index.m3u8"
+  },
+  {
     "name": "Lyon Capitale TV",
     "logo": "https://i.imgur.com/4WfnEaj.png",
     "group": "News",
@@ -5448,6 +5460,12 @@
     "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12WH_A1/index_new.m3u8?omap=https"
   },
   {
+    "name": "News12+ Connecticut (1080p) [Geo-blocked]",
+    "logo": "https://i.ibb.co/n8m2mcsV/news12plus-CT.jpg",
+    "group": "News",
+    "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12PLUS_H_CT_A1/index_new.m3u8"
+  },
+  {
     "name": "News12+ Hudson Valley (1080p) [Geo-blocked]",
     "logo": "https://i.ibb.co/cKkdC203/news12plus-HV.jpg",
     "group": "News",
@@ -5722,6 +5740,12 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ora_News_%28Albania%29.svg/512px-Ora_News_%28Albania%29.svg.png",
     "group": "News",
     "url": "https://live1.mediadesk.al/oranews.m3u8"
+  },
+  {
+    "name": "PGTV (720p)",
+    "logo": "https://i.imgur.com/GwDoH4C.png",
+    "group": "News",
+    "url": "https://streamer2.nexgen.bz/16-PGTV/index.m3u8"
   },
   {
     "name": "PNN News (720p)",
@@ -6256,12 +6280,6 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SALAAM_TV/images/LOGO_HD/image.png",
     "group": "News",
     "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeesalaam/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/426c6db7-595e-4aa8-859c-7e86ed2811d0/af896be5-4743-41fc-8b6a-eb05e44f3a6e/3.m3u8"
-  },
-  {
-    "name": "Samachar Plus (1080p)",
-    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Samachar_Plus.png",
-    "group": "News",
-    "url": "https://samacharplus.livebox.co.in/samacharplushls/live.m3u8"
   },
   {
     "name": "Samay Kolkata (720p)",
