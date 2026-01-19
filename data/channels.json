@@ -72,12 +72,6 @@
     "url": "https://d32gxr3r1ksq2p.cloudfront.net/master.m3u8"
   },
   {
-    "name": "NDTV Profit (480p) [Not 24/7]",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NDTV_PROFIT_PRIME/images/LOGO_HD/image.png",
-    "group": "Business",
-    "url": "https://ndtvprofitelemarchana.akamaized.net/hls/live/2003680/ndtvprofit/master.m3u8"
-  },
-  {
     "name": "Zee Business (720p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Business.png",
     "group": "Business",
@@ -756,6 +750,12 @@
     "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6e14bac6d0384e129521a4d005188bfb/index.m3u8"
   },
   {
+    "name": "Pasand TV (576p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Pasand.png",
+    "group": "Entertainment",
+    "url": "https://mumt01.tangotv.in/PASANDTV/index.m3u8"
+  },
+  {
     "name": "Polimer TV (720p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Polimer_TV.png",
     "group": "Entertainment",
@@ -922,6 +922,12 @@
     "logo": "https://dvvlqr1rtlak3.cloudfront.net/TeluguOne/teluguone_logo_resized_400x200.png",
     "group": "Entertainment",
     "url": "https://amg02821-amg02821c1-samsung-in-4717.playouts.now.amagi.tv/playlist/amg02821-objectone-teluguone-samsungin/playlist.m3u8"
+  },
+  {
+    "name": "Thanthi One (576p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Thanti_One.png",
+    "group": "Entertainment",
+    "url": "https://mumt02.tangotv.in/THANTHIONE/index.m3u8"
   },
   {
     "name": "Vanitha TV (720p)",
@@ -1746,6 +1752,12 @@
     "url": "https://mumt02.tangotv.in/B4UMOVIES/index.m3u8"
   },
   {
+    "name": "Bflix Movies (576p)",
+    "logo": "https://i.imgur.com/5CtiQ45.png",
+    "group": "Movies",
+    "url": "https://mumt03.tangotv.in/BFLIX/index.m3u8"
+  },
+  {
     "name": "Bhojpuri Cinema (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BHOJPURI_CINEMA/images/LOGO_HD/image.png",
     "group": "Movies",
@@ -2236,6 +2248,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_PUNJABI_HITS/images/LOGO_HD/image.png",
     "group": "Music",
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/punjabi-hits/index.m3u8"
+  },
+  {
+    "name": "Qello Concerts",
+    "logo": "https://i.imgur.com/IRyFTWq.png",
+    "group": "Music",
+    "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/64240d3d466225000827412b/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7bb439-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6ba3de05-22ef-4ab2-8d11-c4a6c21d39ba"
   },
   {
     "name": "Raj Musix Kannada (576p) [Not 24/7]",
@@ -3910,6 +3928,12 @@
     "logo": "https://i.imgur.com/jF2BabI.png",
     "group": "News",
     "url": "http://gama-mx.com:8085/live/wGKe4xRuXwKc/7XBua8aHeJAK/700943.m3u8"
+  },
+  {
+    "name": "DVB TV (720p) [Geo-blocked]",
+    "logo": "https://i.imgur.com/VdezHOv.png",
+    "group": "News",
+    "url": "https://live-stream.dvb.no/hls/stream_src/index.m3u8"
   },
   {
     "name": "DW Arabic (1080p)",
@@ -7273,7 +7297,7 @@
   },
   {
     "name": "Zee News (1080p)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Zee_news.svg/512px-Zee_news.svg.png",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_NEWS/images/LOGO_HD/LOGO_HD_image.png",
     "group": "News",
     "url": "https://dknttpxmr0dwf.cloudfront.net/index_57.m3u8"
   },
@@ -7632,6 +7656,12 @@
     "url": "https://keralive.com/yupp/tv.php?c=aadinath-tv&e=.m3u8"
   },
   {
+    "name": "Aaseervatham TV (576p)",
+    "logo": "https://i.imgur.com/GlfrYs7.png",
+    "group": "Religious",
+    "url": "https://mumt04.tangotv.in/AASEERVATHAMTV/index.m3u8"
+  },
+  {
     "name": "Aastha (720p)",
     "logo": "https://i.imgur.com/IqgrV92.png",
     "group": "Religious",
@@ -7846,6 +7876,12 @@
     "logo": "https://i.postimg.cc/cLCfzgqB/peacetvurdu.png",
     "group": "Religious",
     "url": "https://dzkyvlfyge.erbvr.com/PeaceTvUrdu/index.m3u8"
+  },
+  {
+    "name": "SVBC 2 (1080p)",
+    "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SVBC%202.png",
+    "group": "Religious",
+    "url": "https://player.mslivestream.net/tamil/ac206e74d75b285755ee4924df87d951.sdp/playlist.m3u8"
   },
   {
     "name": "SVBC 3 (720p)",
@@ -9820,6 +9856,12 @@
     "logo": "https://i.imgur.com/dpI7XPC.png",
     "group": "Undefined",
     "url": "https://cdn-4.pishow.tv/live/1231/master.m3u8"
+  },
+  {
+    "name": "Raftaar Media (240p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAFTAAR_MEDIA/images/LOGO_HD/image.png",
+    "group": "Undefined",
+    "url": "https://6n3yorwpy9ok-hls-live.5centscdn.com/raftaarmedia/243bd1ce0387f18005abfc43b001646a.sdp/playlist.m3u8"
   },
   {
     "name": "Ramdhenu (576p)",
