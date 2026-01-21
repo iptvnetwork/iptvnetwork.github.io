@@ -78,7 +78,7 @@
     "url": "https://ndtvprofit.akamaized.net/hls/live/2107404/ndtvprofit/chunklist_5.m3u8"
   },
   {
-    "name": "Zee Business (720p)",
+    "name": "Zee Business (576p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Zee_Business.png",
     "group": "Business",
     "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8"
@@ -4228,12 +4228,6 @@
     "logo": "https://i.imgur.com/8t9mdg9.png",
     "group": "News",
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/euronews-spa/euronews-es.m3u8"
-  },
-  {
-    "name": "Exitosa (720p)",
-    "logo": "https://i.imgur.com/pu0BSB7.png",
-    "group": "News",
-    "url": "https://luna-1-video.mediaserver.digital/exitosatv_233b-4b49-a726-5a3cb0e3243c/video.m3u8"
   },
   {
     "name": "Express News (576p)",
@@ -9672,6 +9666,12 @@
     "url": "https://2-fss-2.streamhoster.com/pl_118/204972-2205186-1/playlist.m3u8"
   },
   {
+    "name": "Willow Sports (1080p) [Geo-blocked]",
+    "logo": "https://provider-static.plex.tv/epg/cms/production/acf3d1d8-c53e-49ca-86e9-0d9410b106b4/Willow_Sports_dark_Background_1500_1000_color.png",
+    "group": "Sports",
+    "url": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
+  },
+  {
     "name": "World Poker Tour",
     "logo": "https://i.imgur.com/98kLMjj.png",
     "group": "Sports",
@@ -9727,7 +9727,7 @@
   },
   {
     "name": "beIN Sports USA",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bein_Sports_Logo.svg/512px-Bein_Sports_Logo.svg.png",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/BeIN_Sports_logo_%28vertical_version%29.svg/500px-BeIN_Sports_logo_%28vertical_version%29.svg.png",
     "group": "Sports",
     "url": "http://fl1.moveonjoy.com/BEIN_SPORTS/index.m3u8"
   },
