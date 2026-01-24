@@ -114,6 +114,12 @@
     "url": "https://live-cdn-stream-euw1.bfmb.bct.nextradiotv.com/master.m3u8"
   },
   {
+    "name": "CNBC UK (1080p) [Geo-blocked]",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/CNBC_logo.svg/512px-CNBC_logo.svg.png",
+    "group": "Business;News",
+    "url": "https://amg01079-nbcuuk-amg01079c2-lg-gb-2030.playouts.now.amagi.tv/playlist.m3u8"
+  },
+  {
     "name": "Canal E (720p)",
     "logo": "https://i.ibb.co/y4pkxH3/Qtc8-M2-PG-400x400.jpg",
     "group": "Business;News",
@@ -358,6 +364,12 @@
     "logo": "https://i.imgur.com/o9AYq9V.png",
     "group": "Documentary;News",
     "url": "https://the-guardian-3d0e32e7-aa40-49e5-b9d9-c433151fa61a-pl.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6437/master.m3u8"
+  },
+  {
+    "name": "BVG (576p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/BVG.png",
+    "group": "Education",
+    "url": "https://mumt05.tangotv.in/BVG/index.m3u8"
   },
   {
     "name": "Gyandarshan (720p)",
@@ -3144,6 +3156,12 @@
     "url": "https://jmc-live.ercdn.net/altaghier/altaghier.m3u8"
   },
   {
+    "name": "AmarUjala (1080p)",
+    "logo": "https://i.imgur.com/ndQ8LZp.png",
+    "group": "News",
+    "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/amar-ujala/index.m3u8"
+  },
+  {
     "name": "America's Voice (720p)",
     "logo": "",
     "group": "News",
@@ -3217,7 +3235,7 @@
   },
   {
     "name": "Awaaz India TV (720p)",
-    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Awaaz_India_TV.png",
+    "logo": "https://i.imgur.com/eKQs51V.png",
     "group": "News",
     "url": "https://awaazindia.livebox.co.in/AwaazIndaTVdash/Live.mpd"
   },
@@ -8248,6 +8266,54 @@
     "logo": "https://i.imgur.com/ZPYK5jr.png",
     "group": "Sports",
     "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=960"
+  },
+  {
+    "name": "Cosmote Sport 2",
+    "logo": "https://i.imgur.com/1RSyE5N.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT2"
+  },
+  {
+    "name": "Cosmote Sport 3",
+    "logo": "https://i.imgur.com/V5qKXx9.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT3"
+  },
+  {
+    "name": "Cosmote Sport 4",
+    "logo": "https://i.imgur.com/zEdJUZU.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT4"
+  },
+  {
+    "name": "Cosmote Sport 5",
+    "logo": "https://i.imgur.com/0GKXahH.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT5"
+  },
+  {
+    "name": "Cosmote Sport 6",
+    "logo": "https://i.imgur.com/KG6VWN1.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT6"
+  },
+  {
+    "name": "Cosmote Sport 7",
+    "logo": "https://i.imgur.com/p0DKcn2.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT7"
+  },
+  {
+    "name": "Cosmote Sport 8",
+    "logo": "https://i.imgur.com/DKlW5ka.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT8"
+  },
+  {
+    "name": "Cosmote Sport 9",
+    "logo": "https://i.imgur.com/3YwAXcH.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT9"
   },
   {
     "name": "DAZN Combat",
