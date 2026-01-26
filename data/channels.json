@@ -708,6 +708,12 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/mahaa-max/index.m3u8"
   },
   {
+    "name": "Maiboli (576p)",
+    "logo": "https://i.imgur.com/Aaih0rw.png",
+    "group": "Entertainment",
+    "url": "https://mumt01.tangotv.in/MAIBOLI/index.m3u8"
+  },
+  {
     "name": "Mango Mobile TV (1080p)",
     "logo": "https://dvvlqr1rtlak3.cloudfront.net/Mango/MANGOTVLOGO.jpg",
     "group": "Entertainment",
@@ -867,13 +873,7 @@
     "name": "StarPlus (576p)",
     "logo": "https://i.imgur.com/xWxNy3L.png",
     "group": "Entertainment",
-    "url": "http://103.167.255.18:8085/play/a0k5/index.m3u8"
-  },
-  {
-    "name": "StarPlus HD (1080p)",
-    "logo": "https://i.imgur.com/xWxNy3L.png",
-    "group": "Entertainment",
-    "url": "http://103.178.78.151:7505/play/a0uh/index.m3u8"
+    "url": "http://103.52.34.182:8001/play/a01l/index.m3u8"
   },
   {
     "name": "Studio Yuva (576p)",
@@ -1974,12 +1974,6 @@
     "url": "http://116.90.120.152:8000/play/a0hq/index.m3u8"
   },
   {
-    "name": "Star Gold HD (1080p)",
-    "logo": "https://i.imgur.com/xC460sj.png",
-    "group": "Movies",
-    "url": "http://103.167.255.18:8085/play/a0kv/index.m3u8"
-  },
-  {
     "name": "Star Gold Romance (1080p)",
     "logo": "https://i.imgur.com/gSWv9U3.png",
     "group": "Movies",
@@ -1996,18 +1990,6 @@
     "logo": "https://i.imgur.com/azqtpYh.png",
     "group": "Movies",
     "url": "http://116.90.120.152:8000/play/a0gw/index.m3u8"
-  },
-  {
-    "name": "Star Movies HD (1080p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_MOVIES/images/LOGO_HD/image.png",
-    "group": "Movies",
-    "url": "http://103.178.78.151:7505/play/a1ge/index.m3u8"
-  },
-  {
-    "name": "Star Movies Select HD (1080p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_MOVIES_SELECT_HD/images/LOGO_HD/image.png",
-    "group": "Movies",
-    "url": "http://103.178.78.151:7505/play/a1gd/index.m3u8"
   },
   {
     "name": "Star Utsav Movies (576p)",
@@ -2200,6 +2182,12 @@
     "logo": "",
     "group": "Music",
     "url": "https://mntv.livebox.co.in/musichls/live.m3u8"
+  },
+  {
+    "name": "Mastiii (576p)",
+    "logo": "https://i.imgur.com/lxgXHx4.png",
+    "group": "Music",
+    "url": "https://mumt02.tangotv.in/MASTIII/index.m3u8"
   },
   {
     "name": "Mh 1 Music (576p) [Not 24/7]",
