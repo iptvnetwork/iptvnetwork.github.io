@@ -1518,10 +1518,10 @@
     "url": "http://serv30.vintera.tv:8081/sochi/sochi24_tv/playlist.m3u8"
   },
   {
-    "name": "TVR Sport (1080p) [Geo-blocked]",
+    "name": "TVR Sport",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/TVR_Sport_Logo_2023.svg/320px-TVR_Sport_Logo_2023.svg.png",
     "group": "General;Sports",
-    "url": "https://tvr-tvrsport.cdn.zitec.com/live/tvrsport/main.m3u8"
+    "url": "https://tvr-sport.lg.mncdn.com/tvrsport/smil:tvrsport.smil/chunklist_b5160000.m3u8"
   },
   {
     "name": "Chithiram (576p)",
@@ -1962,7 +1962,7 @@
     "url": "http://116.90.120.152:8000/play/a0kt/index.m3u8"
   },
   {
-    "name": "Star Gold 2 (576p)",
+    "name": "Star Gold 2 (480p)",
     "logo": "https://i.imgur.com/G0ZfzZr.png",
     "group": "Movies",
     "url": "http://116.90.120.152:8000/play/a0gz/index.m3u8"
@@ -6876,10 +6876,10 @@
     "url": "https://vs2142.vcdn.biz/2958f855a43f669a4282e5134a882554_megogo/live/hls/b/700_2490_4000/u_sid/0/o/150446381/rsid/7aae92a2-4034-476f-8fff-33bfc431e127/u_uid/0/u_vod/0/u_device/cms_html5/u_devicekey/_site/lip/91.226.196.37*asn/u_srvc/81255/u_did/web_duMuKipCoyWU9tWH3VWiK9eX5ZPorcR6/type.live/chunklist-sid8883796453807134950-b4000000.m3u8"
   },
   {
-    "name": "TVR Info (1080p) [Geo-blocked]",
+    "name": "TVR Info",
     "logo": "https://i.imgur.com/7oE7ThR.png",
     "group": "News",
-    "url": "https://tvr-tvrinfo.cdn.zitec.com/live/tvrinfo/main.m3u8"
+    "url": "https://tvr-info.lg.mncdn.com/tvrinfo/smil:tvrinfo.smil/chunklist_b5160000.m3u8"
   },
   {
     "name": "TV\u00eddeoNews (720p) [Not 24/7]",
@@ -7366,6 +7366,12 @@
     "logo": "https://t4.ftcdn.net/jpg/03/88/22/21/360_F_388222175_D6PTsMoUyegpPJ63zvkecPsZAttc95mD.jpg",
     "group": "News",
     "url": "https://live.zoomnews.info/live/Zoom_playlist.m3u8"
+  },
+  {
+    "name": "i24NEWS English USA",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/LOGO_i24NEWS.png/512px-LOGO_i24NEWS.png",
+    "group": "News",
+    "url": "https://fastly.live.brightcove.com/6386790908112/eu-central-1/5377161796001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiZXJmajYzLmVncmVzcy53YzQ3bTEiLCJhY2NvdW50X2lkIjoiNTM3NzE2MTc5NjAwMSIsImVobiI6ImZhc3RseS5saXZlLmJyaWdodGNvdmUuY29tIiwiaXNzIjoiYmxpdmUtcGxheWJhY2stc291cmNlLWFwaSIsInN1YiI6InBhdGhtYXB0b2tlbiIsImF1ZCI6WyI1Mzc3MTYxNzk2MDAxIl0sImp0aSI6IjYzODY3OTA5MDgxMTIifQ._w5c3EwfnEecDCEpDaKuVz07uuEyUb3vXvQN3svv-oU/chunklist.m3u8"
   },
   {
     "name": "i24NEWS Hebrew",
@@ -9168,10 +9174,10 @@
     "url": "https://racingvic-i.akamaized.net/hls/live/598695/racingvic/index1500.m3u8"
   },
   {
-    "name": "Radio Turrialba TV Sports (576p) [Geo-blocked]",
+    "name": "Radio Turrialba TV Sports (576p) [Not 24/7]",
     "logo": "https://i.imgur.com/2ZcUXbE.png",
     "group": "Sports",
-    "url": "https://live21.bozztv.com/akamaissh101/ssh101/turrialbatv/playlist.m3u8"
+    "url": "https://server2.cloundmediacp.in/turrialbatv/turrialbatv/playlist.m3u8"
   },
   {
     "name": "Rai Sport HD",
