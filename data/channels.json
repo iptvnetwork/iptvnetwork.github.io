@@ -1914,10 +1914,10 @@
     "url": "https://mumt04.tangotv.in/PUBLICMOVIES/index.m3u8"
   },
   {
-    "name": "Raj Digital Plus (576p)",
+    "name": "Raj Digital Plus (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_DIGITAL_PLUS/images/LOGO_HD/image.png",
     "group": "Movies",
-    "url": "http://103.140.254.2:3500/live/683.m3u8"
+    "url": "https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/RajTV_Digital_plus/master_1.m3u8"
   },
   {
     "name": "Roja Movies (1080p)",
@@ -2268,10 +2268,10 @@
     "url": "https://mumt04.tangotv.in/RAJMUSIXMALAYALAM/index.m3u8"
   },
   {
-    "name": "Raj Musix Tamil (576p)",
+    "name": "Raj Musix Tamil (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_MUSIX_TAMIL/images/LOGO_HD/image.png",
     "group": "Music",
-    "url": "http://103.140.254.2:3500/live/748.m3u8"
+    "url": "https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/Raj_Musix/master_1.m3u8"
   },
   {
     "name": "Raj Musix Telugu (720p)",
@@ -2856,10 +2856,10 @@
     "url": "https://tv.streaming.com.bo/atvargentina/index.m3u8"
   },
   {
-    "name": "ATV+",
+    "name": "ATV+ (720p)",
     "logo": "https://i.imgur.com/fY9256H.png",
     "group": "News",
-    "url": "https://alba-pe-atv-atvmas.stream.mediatiquestream.com/index.m3u8"
+    "url": "https://d2qsan2ut81n2k.cloudfront.net/live/77eece7f-8de5-4406-9f7e-7be16d81f2ce/ts:abr.m3u8"
   },
   {
     "name": "Aaj Tak (1080p)",
@@ -8290,6 +8290,12 @@
     "logo": "https://i.imgur.com/ZPYK5jr.png",
     "group": "Sports",
     "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=960"
+  },
+  {
+    "name": "Cosmote Sport 1",
+    "logo": "https://i.imgur.com/fn0TM6V.png",
+    "group": "Sports",
+    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT1"
   },
   {
     "name": "Cosmote Sport 2",
