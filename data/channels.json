@@ -894,12 +894,6 @@
     "url": "http://103.78.149.54:8000/play/a00y/index.m3u8"
   },
   {
-    "name": "Sun TV (1080p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUN_TV/images/LOGO_HD/image.png",
-    "group": "Entertainment",
-    "url": "https://livestream10.sunnxt.com/DolbyVision/SunTV_HDR/SunTV_HDR_Endpoints/SunTV-HDR10-IN-index.m3u8"
-  },
-  {
     "name": "Suriya TV (1080p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/suryatvtamil.png",
     "group": "Entertainment",
@@ -6244,12 +6238,6 @@
     "logo": "https://i.imgur.com/n2u57y3.png",
     "group": "News",
     "url": "https://viamotionhsi.netplus.ch/live/eds/rainews/browser-dash/rainews.mpd"
-  },
-  {
-    "name": "Raj News (576p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_NEWS_TAMIL/images/LOGO_HD/image.png",
-    "group": "News",
-    "url": "http://103.140.254.2:3500/live/767.m3u8"
   },
   {
     "name": "Raj News Kannada (576p) [Not 24/7]",
