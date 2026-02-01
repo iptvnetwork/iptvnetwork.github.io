@@ -93,13 +93,7 @@
     "name": "Asharq News (1080p)",
     "logo": "https://i.imgur.com/bqRC3sl.png",
     "group": "Business;News",
-    "url": "https://bcovlive-a.akamaihd.net/0b75ef0a49e24704a4ca023d3a82c2df/ap-south-1/6203311941001/playlist.m3u8"
-  },
-  {
-    "name": "Asharq News Portrait (1280p)",
-    "logo": "https://i.imgur.com/bqRC3sl.png",
-    "group": "Business;News",
-    "url": "https://bcovlive-a.akamaihd.net/ed81ac1118414d4fa893d3a83ccec9be/eu-central-1/6203311941001/playlist.m3u8"
+    "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-asharq/10ae30c64e21402c8116a7fb1e5aa789/index.m3u8"
   },
   {
     "name": "Asharq Radio (1080p)",
@@ -465,13 +459,13 @@
     "name": "Brio TV (576p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Brio_TV.png",
     "group": "Entertainment",
-    "url": "http://103.140.254.2:3500/live/3381.m3u8"
+    "url": "https://mumt02.tangotv.in/BRIOTV/index.m3u8"
   },
   {
     "name": "Captain (576p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Captain.png",
     "group": "Entertainment",
-    "url": "http://103.140.254.2:3500/live/3069.m3u8"
+    "url": "https://mumt01.tangotv.in/CAPTAIN/index.m3u8"
   },
   {
     "name": "Colors Bangla (1080p)",
@@ -897,7 +891,7 @@
     "name": "Suriya TV (1080p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/suryatvtamil.png",
     "group": "Entertainment",
-    "url": "http://103.140.254.2:3500/live/3394.m3u8"
+    "url": "https://galaxyott.live/hls/suryatv.m3u8"
   },
   {
     "name": "Surya TV (1080p)",
@@ -2190,10 +2184,10 @@
     "url": "https://mumt02.tangotv.in/MASTIII/index.m3u8"
   },
   {
-    "name": "Mh 1 Music (576p) [Not 24/7]",
+    "name": "Mh 1 Music (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_MH1/images/LOGO_HD/image.png",
     "group": "Music",
-    "url": "http://103.140.254.2:3500/live/742.m3u8"
+    "url": "https://mumt04.tangotv.in/MHONE/index.m3u8"
   },
   {
     "name": "Music India (720p) [Not 24/7]",
@@ -3082,12 +3076,6 @@
     "logo": "https://i.imgur.com/c2bwn4G.png",
     "group": "News",
     "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8"
-  },
-  {
-    "name": "Al Nujaba",
-    "logo": "https://i.postimg.cc/g0Ncyv3p/alnujabatv.png",
-    "group": "News",
-    "url": "http://63b03f7689049.streamlock.net:1935/live/3/playlist.m3u8"
   },
   {
     "name": "Al Yaum TV (1080p)",
@@ -4236,10 +4224,10 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/euronews-spa/euronews-es.m3u8"
   },
   {
-    "name": "Exitosa TV [Not 24/7]",
+    "name": "Exitosa TV (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/pu0BSB7.png",
     "group": "News",
-    "url": "https://luna-3-video.mediaserver.digital/exitosatv_233b-4b49-a726-5a451262/index.m3u8"
+    "url": "https://luna-4-video.mediaserver.digital/exitosatv_233b-4b49-a726-5a451262/index.m3u8"
   },
   {
     "name": "Express News (576p)",
@@ -5058,6 +5046,12 @@
     "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/lyoncapitale.m3u8"
   },
   {
+    "name": "M Nadu TV (576p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/M_Nadu.png",
+    "group": "News",
+    "url": "https://mumt01.tangotv.in/MNADU/index.m3u8"
+  },
+  {
     "name": "M Sign Media (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/8fdUkOl.png",
     "group": "News",
@@ -5214,10 +5208,10 @@
     "url": "https://edge.medcom.id/live-edge/smil:metro.smil/playlist.m3u8"
   },
   {
-    "name": "Mh 1 News (576p) [Not 24/7]",
+    "name": "Mh 1 News (360p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Mh_One_News.png",
     "group": "News",
-    "url": "http://103.140.254.2:3500/live/511.m3u8"
+    "url": "https://livestream.jswk.online/mhonenews/live/index.m3u8"
   },
   {
     "name": "MiSURtv (1080p)",
@@ -6460,6 +6454,12 @@
     "logo": "https://i.imgur.com/Ap9K1lj.png",
     "group": "News",
     "url": "http://66.102.120.18:8000/play/a03z/index.m3u8"
+  },
+  {
+    "name": "Sindo News TV",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/SindoNewsTV_2023.png/375px-SindoNewsTV_2023.png",
+    "group": "News",
+    "url": "http://202.80.222.20/cdn/iptv/Tvod/001/channel2000115/1024.m3u8"
   },
   {
     "name": "Sky News Arabia (1080p)",
