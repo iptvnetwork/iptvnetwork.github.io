@@ -180,12 +180,6 @@
     "url": "https://d2tbworamivdmb.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_ABHIRUCHI_H264-3_cloud-in/index.m3u8"
   },
   {
-    "name": "Food Food (576p)",
-    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Food_Food.png",
-    "group": "Cooking;Lifestyle",
-    "url": "http://103.140.254.2:3500/live/561.m3u8"
-  },
-  {
     "name": "Channel S (1080p)",
     "logo": "https://www.channels.com.bd/storage/project_files/logo/2024-05-14a_n17156821814310.png",
     "group": "Culture",
@@ -528,16 +522,10 @@
     "url": "http://103.140.254.2:3500/live/785.m3u8"
   },
   {
-    "name": "Colors Tamil (576p)",
+    "name": "Colors Tamil (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_TAMIL/images/LOGO_HD/image.png",
     "group": "Entertainment",
-    "url": "http://103.140.254.2:3500/live/1371.m3u8"
-  },
-  {
-    "name": "Colors Tamil HD (1080p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_TAMIL/images/LOGO_HD/image.png",
-    "group": "Entertainment",
-    "url": "http://103.140.254.2:3500/live/429.m3u8"
+    "url": "http://15.235.144.106:14052/"
   },
   {
     "name": "DD Malayalam",
@@ -886,6 +874,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUN_NEO/images/LOGO_HD/image.png",
     "group": "Entertainment",
     "url": "http://103.78.149.54:8000/play/a00y/index.m3u8"
+  },
+  {
+    "name": "Sun TV HD (720p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUN_TV/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://15.235.144.106:14054/"
   },
   {
     "name": "Suriya TV (1080p)",
@@ -3570,10 +3564,10 @@
     "url": "https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8"
   },
   {
-    "name": "CCTV-13\u65b0\u95fb (2160p)",
+    "name": "CCTV-13 (1080p)",
     "logo": "https://i.imgur.com/6MTar6J.png",
     "group": "News",
-    "url": "http://123.175.209.52:9003/hls/14/index.m3u8"
+    "url": "https://cdn3.163189.xyz/163189/cctv13"
   },
   {
     "name": "CDNN 23 (1080p) [Not 24/7]",
@@ -6522,10 +6516,10 @@
     "url": "https://live.cast-control.eu/StartMedia/StartMedia/playlist.m3u8"
   },
   {
-    "name": "Sterk TV",
+    "name": "St\u00eark TV (1080p)",
     "logo": "https://i.imgur.com/bIheNAI.png",
     "group": "News",
-    "url": "https://trn09.bozztv.com/gin-sterk/index.m3u8"
+    "url": "https://muzkurd.com/sterktv/sterk/playlist.m3u8"
   },
   {
     "name": "Suceso TV [Not 24/7]",
