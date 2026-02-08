@@ -306,12 +306,6 @@
     "url": "https://amg01550-amg01550c6-samsung-in-4679.playouts.now.amagi.tv/playlist/amg01550-indiatvfast-indiatvakasamsung-samsungin/playlist.m3u8"
   },
   {
-    "name": "The Guardian",
-    "logo": "https://i.imgur.com/o9AYq9V.png",
-    "group": "Documentary;News",
-    "url": "https://the-guardian-3d0e32e7-aa40-49e5-b9d9-c433151fa61a-pl.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6437/master.m3u8"
-  },
-  {
     "name": "BVG (576p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/BVG.png",
     "group": "Education",
@@ -1882,6 +1876,42 @@
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Steelbird_Music.png",
     "group": "Music",
     "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8"
+  },
+  {
+    "name": "Stingray Classic Rock (1080p)",
+    "logo": "https://i.imgur.com/FBgu8yB.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/ose-101ads-montreal/samsungtvplus/master.m3u8"
+  },
+  {
+    "name": "Stingray DJAZZ (1080p)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Stingray_Djazz.png/512px-Stingray_Djazz.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/djazz-djaads-montreal/samsungtvplus/master.m3u8"
+  },
+  {
+    "name": "Stingray Easy Listening (1080p)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Stingray_Music_logo.svg/512px-Stingray_Music_logo.svg.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/ose-137ads-montreal/samsungtvplus/master.m3u8"
+  },
+  {
+    "name": "Stingray Naturescape (1080p)",
+    "logo": "https://i.imgur.com/882kd90.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/master.m3u8"
+  },
+  {
+    "name": "Stingray The Spa (1080p)",
+    "logo": "https://i.imgur.com/ywAN923.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/ose-122ads-montreal/samsungtvplus/master.m3u8"
+  },
+  {
+    "name": "Stingray Today's KPOP (1080p)",
+    "logo": "https://i.imgur.com/mMbntB5.png",
+    "group": "Music",
+    "url": "https://lotus.stingray.com/manifest/ose-317ads-montreal/samsungtvplus/master.m3u8"
   },
   {
     "name": "Sun Music HD (720p)",
@@ -4518,6 +4548,12 @@
     "url": "https://lencatelevision.com/hls/stream.m3u8"
   },
   {
+    "name": "Libya Al Ahrar TV (1080p)",
+    "logo": "https://i.imgur.com/xkQKVGi.png",
+    "group": "News",
+    "url": "https://stream-hls.castr.net/64490fcefe045f1b63012886/live_22d9a1f0c69c11ee9441219c2cc6d61f/index.fmp4.m3u8"
+  },
+  {
     "name": "Life TV (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/lWeJxm0.png",
     "group": "News",
@@ -4623,7 +4659,7 @@
     "name": "Makan 33 (1080p)",
     "logo": "https://i.imgur.com/RVtQTed.png",
     "group": "News",
-    "url": "https://makan.media.kan.org.il/hls/live/2024680/2024680/master.m3u8"
+    "url": "https://kancdn.medonecdn.net/livehls/oil/kancdn-live/live/makan/live.livx/playlist.m3u8"
   },
   {
     "name": "Malabar News (720p) [Not 24/7]",
@@ -5292,10 +5328,10 @@
     "url": "https://59a564764e2b6.streamlock.net/notiunotv/notiunotv/playlist.m3u8"
   },
   {
-    "name": "Noticias 16",
+    "name": "Noticias 16 (720p) [Not 24/7]",
     "logo": "https://www.lyngsat.com/logo/tv/nn/noticias-16-do.png",
     "group": "News",
-    "url": "https://cdn.essastream.com:3457/live/noticiasn16live.m3u8"
+    "url": "https://mlb.essastream.com:8081/noticiasn16/playlist.m3u8"
   },
   {
     "name": "Noticiero 90 Minutos (720p) [Not 24/7]",
@@ -6342,10 +6378,10 @@
     "url": "https://ss2.tvrdomi.com:1936/vozzmedianetwork/vozzmedianetwork/playlist.m3u8"
   },
   {
-    "name": "TVP World (1080p) [Geo-blocked]",
+    "name": "TVP World",
     "logo": "https://i.imgur.com/lB4MgRI.png",
     "group": "News",
-    "url": "https://vs2142.vcdn.biz/2958f855a43f669a4282e5134a882554_megogo/live/hls/b/700_2490_4000/u_sid/0/o/150446381/rsid/7aae92a2-4034-476f-8fff-33bfc431e127/u_uid/0/u_vod/0/u_device/cms_html5/u_devicekey/_site/lip/91.226.196.37*asn/u_srvc/81255/u_did/web_duMuKipCoyWU9tWH3VWiK9eX5ZPorcR6/type.live/chunklist-sid8883796453807134950-b4000000.m3u8"
+    "url": "https://dash2.antik.sk/live/test_tvp_world/playlist.m3u8"
   },
   {
     "name": "TVR Info",
@@ -6514,12 +6550,6 @@
     "logo": "https://i.imgur.com/C5vHpd0.png",
     "group": "News",
     "url": "https://cloudflare.streamgato.us:3300/live/tribunatvlive.m3u8"
-  },
-  {
-    "name": "Truso TV (576p) [Not 24/7]",
-    "logo": "https://i.imgur.com/GUsauxk.png",
-    "group": "News",
-    "url": "https://stream.truso.tv/elblag/myStream_aac/playlist.m3u8"
   },
   {
     "name": "Twenty Four News (396p)",
@@ -8286,12 +8316,6 @@
     "url": "https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8"
   },
   {
-    "name": "Motorsport.tv",
-    "logo": "https://i.imgur.com/qmczb2N.png",
-    "group": "Sports",
-    "url": "https://25dee28f.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X01vdG9yc3BvcnR0di0xX0hMUw/playlist.m3u8"
-  },
-  {
     "name": "Multivisi\u00f3n Sports (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/wLjSSo2.jpg",
     "group": "Sports",
@@ -8722,18 +8746,6 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Stadium_%28sports_network%29_logo.svg/512px-Stadium_%28sports_network%29_logo.svg.png",
     "group": "Sports",
     "url": "https://aegis-cloudfront-1.tubi.video/74681dcc-e6d0-4add-ad67-a22ad9c152e6/playlist.m3u8"
-  },
-  {
-    "name": "Star Sports 1 HD (720p)",
-    "logo": "https://i.imgur.com/E5jjKHI.png",
-    "group": "Sports",
-    "url": "http://122.165.240.223:1234/stream/tp/sp1/master.m3u8"
-  },
-  {
-    "name": "Star Sports 2 HD (720p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_2/images/LOGO_HD/image.png",
-    "group": "Sports",
-    "url": "http://122.165.240.223:1234/stream/tp/sp2/master.m3u8"
   },
   {
     "name": "Strongman (720p)",
