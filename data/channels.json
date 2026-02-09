@@ -2412,7 +2412,13 @@
     "url": "https://d2qsan2ut81n2k.cloudfront.net/live/77eece7f-8de5-4406-9f7e-7be16d81f2ce/ts:abr.m3u8"
   },
   {
-    "name": "Aaj Tak (1080p)",
+    "name": "Aaj Tak (404p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_AAJ_TAK/images/LOGO_HD/image.png",
+    "group": "News",
+    "url": "https://aajtaklive-amd.akamaized.net/hls/live/2014416/aajtak/aajtaklive/live_404p/chunks.m3u8"
+  },
+  {
+    "name": "Aaj Tak HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_AAJ_TAK/images/LOGO_HD/image.png",
     "group": "News",
     "url": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/AAJTAK_REDIS.m3u8"
@@ -3438,12 +3444,6 @@
     "url": "https://itv.streams.ovh:1936/corfuchannel/corfuchannel/playlist.m3u8"
   },
   {
-    "name": "Crimea 24 (576i)",
-    "logo": "https://i.imgur.com/k4C0uvp.png",
-    "group": "News",
-    "url": "https://cdn.1tvcrimea.ru/24tvcrimea.m3u8"
-  },
-  {
     "name": "C\u00edtrico TV (240p)",
     "logo": "https://enhd.ar/wp-content/uploads/2022/01/0e4a83fc-ba5b-4f26-a333-31f8bd544bcb-300x260.jpeg",
     "group": "News",
@@ -3460,6 +3460,12 @@
     "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/DD%20News%20HD.png",
     "group": "News",
     "url": "http://103.78.149.54:8000/play/a002/index.m3u8"
+  },
+  {
+    "name": "DD News HD (1080p)",
+    "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/DD%20News%20HD.png",
+    "group": "News",
+    "url": "http://103.78.149.54:8000/play/a02f/index.m3u8"
   },
   {
     "name": "DHA (720p) [Not 24/7]",
@@ -4698,22 +4704,16 @@
     "url": "https://media.streambrothers.com:19360/8356/8356.m3u8"
   },
   {
-    "name": "Medi 1 TV Arabic (1080p)",
+    "name": "Medi 1 TV Arabic (720p)",
     "logo": "https://i.imgur.com/3YsZPY6.jpeg",
     "group": "News",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8"
+    "url": "https://streaming2.medi1tv.com/live/smil:medi1ar.smil/playlist.m3u8"
   },
   {
-    "name": "Medi 1 TV Maghreb (1080p)",
+    "name": "Medi 1 TV Maghreb (720p)",
     "logo": "https://i.imgur.com/F5OFQsp.jpeg",
     "group": "News",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8"
-  },
-  {
-    "name": "Medi1TV Afrique (1080p)",
-    "logo": "https://i.imgur.com/a20DHnj.png",
-    "group": "News",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8"
+    "url": "https://streaming2.medi1tv.com/live/smil:medi1tv.smil/playlist.m3u8"
   },
   {
     "name": "Media One (720p)",
@@ -4780,6 +4780,12 @@
     "logo": "https://i.imgur.com/TG1T5Oh.png",
     "group": "News",
     "url": "https://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/652e922db4b047000825f975livestitch/master.m3u8?advertisingId={PSID}&appVersion=unknown&deviceDNT={TARGETOPT}&deviceId={PSID}&deviceLat=0&deviceLon=0&deviceMake=samsung&deviceModel=samsung&deviceType=samsung-tvplus&deviceVersion=unknown&embedPartner=samsung-tvplus&profileFloor=&profileLimit=&profilesFromStream=true&samsung_app_domain={APP_DOMAIN}&samsung_app_name={APP_NAME}&us_privacy=1YNY"
+  },
+  {
+    "name": "Millet (720p)",
+    "logo": "https://i.imgur.com/hUjLRLy.png",
+    "group": "News",
+    "url": "https://live1.1tvcrimea.ru/milletlive.m3u8"
   },
   {
     "name": "Minformo TV (720p)",
@@ -5331,7 +5337,7 @@
     "name": "Noticias 16 (720p) [Not 24/7]",
     "logo": "https://www.lyngsat.com/logo/tv/nn/noticias-16-do.png",
     "group": "News",
-    "url": "https://mlb.essastream.com:8081/noticiasn16/playlist.m3u8"
+    "url": "https://mlb.essastream.com:8081/noticias16/playlist.m3u8"
   },
   {
     "name": "Noticiero 90 Minutos (720p) [Not 24/7]",
@@ -6936,16 +6942,16 @@
     "url": "http://cdn-01.bonus-tv.ru/kriktv_edge/playlist.m3u8"
   },
   {
+    "name": "\u041a\u0440\u044b\u043c 24",
+    "logo": "https://i.imgur.com/k4C0uvp.png",
+    "group": "News",
+    "url": "https://cdn.1tvcrimea.ru/24tvcrimea.m3u8"
+  },
+  {
     "name": "\u041b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043d\u044b\u0439 24",
     "logo": "https://i.imgur.com/z9t6x8B.png",
     "group": "News",
     "url": "https://sevas.1tvcrimea.ru/legendarniy24.m3u8"
-  },
-  {
-    "name": "\u041c\u0438\u043b\u043b\u0435\u0442 (540p) [Not 24/7]",
-    "logo": "https://i.imgur.com/hUjLRLy.png",
-    "group": "News",
-    "url": "https://live.trkmillet.ru/millet/index.m3u8"
   },
   {
     "name": "\u041c\u0438\u0440 24 (1080p)",
@@ -7768,60 +7774,6 @@
     "logo": "https://i.imgur.com/ZPYK5jr.png",
     "group": "Sports",
     "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=960"
-  },
-  {
-    "name": "Cosmote Sport 1",
-    "logo": "https://i.imgur.com/fn0TM6V.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT1"
-  },
-  {
-    "name": "Cosmote Sport 2",
-    "logo": "https://i.imgur.com/1RSyE5N.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT2"
-  },
-  {
-    "name": "Cosmote Sport 3",
-    "logo": "https://i.imgur.com/V5qKXx9.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT3"
-  },
-  {
-    "name": "Cosmote Sport 4",
-    "logo": "https://i.imgur.com/zEdJUZU.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT4"
-  },
-  {
-    "name": "Cosmote Sport 5",
-    "logo": "https://i.imgur.com/0GKXahH.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT5"
-  },
-  {
-    "name": "Cosmote Sport 6",
-    "logo": "https://i.imgur.com/KG6VWN1.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT6"
-  },
-  {
-    "name": "Cosmote Sport 7",
-    "logo": "https://i.imgur.com/p0DKcn2.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT7"
-  },
-  {
-    "name": "Cosmote Sport 8",
-    "logo": "https://i.imgur.com/DKlW5ka.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT8"
-  },
-  {
-    "name": "Cosmote Sport 9",
-    "logo": "https://i.imgur.com/3YwAXcH.png",
-    "group": "Sports",
-    "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT9"
   },
   {
     "name": "DAZN Combat",
