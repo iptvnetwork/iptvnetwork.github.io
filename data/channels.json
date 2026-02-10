@@ -156,10 +156,10 @@
     "url": "https://cdn149.anystream.uk:8082/g1/tvchsuk03/playlist.m3u8"
   },
   {
-    "name": "DD BHARATI (576p)",
+    "name": "DD Bharati (576p)",
     "logo": "https://i.imgur.com/4tfUIEo.png",
     "group": "Culture",
-    "url": "http://103.78.149.54:8000/play/a024/index.m3u8"
+    "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/67cec794d8b14f9ba21f73924ac65797/index.m3u8"
   },
   {
     "name": "DD Punjabi (576p)",
@@ -342,10 +342,10 @@
     "url": "https://hls.dabangasudan.org/hls/stream.m3u8"
   },
   {
-    "name": "DD KISAN (576p)",
+    "name": "DD Kisan (576p)",
     "logo": "https://i.imgur.com/x56WJEa.png",
     "group": "Education;Outdoor",
-    "url": "http://103.78.149.54:8000/play/a004/index.m3u8"
+    "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4f053f2c12a24641bf701fb7f2376750/index.m3u8"
   },
   {
     "name": "Aakaash Aath (720p)",
@@ -720,6 +720,12 @@
     "url": "https://mumt02.tangotv.in/SIRIKANNADAALLTIME/index.m3u8"
   },
   {
+    "name": "Sony Entertainment Television HD (720p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SET_HD/images/LOGO_HD/image.png",
+    "group": "Entertainment",
+    "url": "http://217.20.112.199/sethd/index.m3u8"
+  },
+  {
     "name": "Sooriyan TV (1080p)",
     "logo": "https://i.ibb.co/LSyydKj/Sooriyan-TV-Tamil.jpg",
     "group": "Entertainment",
@@ -1074,16 +1080,16 @@
     "url": "http://103.78.149.54:8000/play/a00n/index.m3u8"
   },
   {
-    "name": "DD URDU (576p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_URDU/images/LOGO_HD/image.png",
-    "group": "General",
-    "url": "http://103.78.149.54:8000/play/a02c/index.m3u8"
-  },
-  {
     "name": "DD UTTARAKHAND (576p)",
     "logo": "https://i.imgur.com/GzBsbos.png",
     "group": "General",
     "url": "http://103.78.149.54:8000/play/a02z/index.m3u8"
+  },
+  {
+    "name": "DD Urdu (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_URDU/images/LOGO_HD/image.png",
+    "group": "General",
+    "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/9b91e9007e754db39a8b32c6bfc5b24a/index.m3u8"
   },
   {
     "name": "DD Uttar Pradesh (576p)",
@@ -7782,16 +7788,16 @@
     "url": "https://dazn-combat-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-dazn-combat-rakuten/CDN/master.m3u8"
   },
   {
-    "name": "DD SPORTS (576p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SPORTS/images/LOGO_HD/image.png",
-    "group": "Sports",
-    "url": "http://103.78.149.54:8000/play/a02r/index.m3u8"
-  },
-  {
     "name": "DD SPORTS HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SPORTS/images/LOGO_HD/image.png",
     "group": "Sports",
     "url": "http://103.78.149.54:8000/play/a02i/index.m3u8"
+  },
+  {
+    "name": "DD Sports SD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SPORTS/images/LOGO_HD/image.png",
+    "group": "Sports",
+    "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8"
   },
   {
     "name": "EDGESport (1080p)",
