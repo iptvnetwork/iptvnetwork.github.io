@@ -7452,6 +7452,12 @@
     "url": "https://liveeu-gcp.alkassdigital.net/shooflive/main.m3u8"
   },
   {
+    "name": "Alkass SHOOF 2 (1080p)",
+    "logo": "https://shoof.alkass.net/assets/images/shoof2.png",
+    "group": "Sports",
+    "url": "https://liveeu-gcp.alkassdigital.net/shooflive2/main.m3u8"
+  },
+  {
     "name": "Alkass Seven (1080p)",
     "logo": "https://i.imgur.com/3eyHP3S.png",
     "group": "Sports",
@@ -8098,6 +8104,12 @@
     "logo": "https://i.imgur.com/2ByDyzL.png",
     "group": "Sports",
     "url": "https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8"
+  },
+  {
+    "name": "Nudge Sports Channel",
+    "logo": "https://i.imgur.com/TW0hapZ.png",
+    "group": "Sports",
+    "url": "https://streams.comclark.com/live_input/nudge_sports/playlist.m3u8"
   },
   {
     "name": "Olympic Channel [Geo-blocked]",
