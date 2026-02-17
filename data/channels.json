@@ -3054,12 +3054,6 @@
     "url": "https://dash2.antik.sk/live/test_bbc_world/playlist.m3u8"
   },
   {
-    "name": "BBC News North America",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BBC_NEWS/images/LOGO_HD/image.png",
-    "group": "News",
-    "url": "https://fl2.moveonjoy.com/BBC_WORLD_NEWS/index.m3u8"
-  },
-  {
     "name": "BBC Persian (720p)",
     "logo": "https://i.imgur.com/4uTMnPb.png",
     "group": "News",
@@ -5154,12 +5148,6 @@
     "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6cd2f649739a45ca9de1daf81cc7d0f2/index.m3u8"
   },
   {
-    "name": "News Nation (720p)",
-    "logo": "https://zap2it.tmsimg.com/h3/NowShowing/91097/s91097_ll_h15_ae.png?w=512",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/NEWS_NATION/index.m3u8"
-  },
-  {
     "name": "News Tamil 24x7 (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NEWS_TAMIL_24X7/images/LOGO_HD/image.png",
     "group": "News",
@@ -5664,10 +5652,10 @@
     "url": "https://prudentmcdn.rixcast.com/prudentm.m3u8"
   },
   {
-    "name": "Public TV (720p)",
+    "name": "Public TV (576p) [Geo-blocked]",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_PUBLIC_TV/images/LOGO_HD/image.png",
     "group": "News",
-    "url": "https://cdn-3.pishow.tv/live/439/master.m3u8"
+    "url": "https://livestreampublictv.sunnxt.com/publictv/index.m3u8"
   },
   {
     "name": "Publika TV (720p)",
@@ -6714,34 +6702,10 @@
     "url": "https://dvrfl03.bozztv.com/hondu/hondu-rick-fox5/index.m3u8"
   },
   {
-    "name": "WAPT ABC (Jackson MS)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b9/WAPT2022logo.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/MS_JACKSON_ABC/index.m3u8"
-  },
-  {
-    "name": "WBZ CBS (Boston MA)",
-    "logo": "https://i.imgur.com/NC5qL8u.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/MA_BOSTON_CBS/mpegts"
-  },
-  {
     "name": "WELT (1080p)",
     "logo": "https://i.imgur.com/s4TZoxx.png",
     "group": "News",
     "url": "https://viamotionhsi.netplus.ch/live/eds/n24/browser-HLS8/n24.m3u8"
-  },
-  {
-    "name": "WEWS ABC (Cleveland OH)",
-    "logo": "https://i.imgur.com/sUonBr6.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/OH_CLEVELAND_ABC/index.m3u8"
-  },
-  {
-    "name": "WFTS-DT1",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
-    "group": "News",
-    "url": "https://fl2.moveonjoy.com/FL_Tampa_ABC/index.m3u8"
   },
   {
     "name": "WGGS-DT2 (720p)",
@@ -6762,40 +6726,16 @@
     "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-fox2detroitwjbk-vizious/playlist.m3u8"
   },
   {
-    "name": "WKBW ABC (Buffalo NY)",
-    "logo": "https://i.imgur.com/dtzR3Y1.png",
-    "group": "News",
-    "url": "https://fl7.moveonjoy.com/NY_BUFFALO_ABC/mpegts"
-  },
-  {
-    "name": "WLKY CBS (Louisville KY)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/CBS_logo_%282020%29.svg/512px-CBS_logo_%282020%29.svg.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/KY_LOUISVILLE_CBS/index.m3u8"
-  },
-  {
     "name": "WLS ABC 7 News (Chicago IL) (720p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
     "group": "News",
     "url": "https://content.uplynk.com/channel/ext/aac37e2c66614e699fb189ab391084ff/wls_24x7_news.m3u8"
   },
   {
-    "name": "WPVI ABC (Philadelphia PA)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/PA_PHILADELPHIA_ABC/index.m3u8"
-  },
-  {
     "name": "WPVI ABC 6 News (Philadelphia PA) (720p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
     "group": "News",
     "url": "https://content.uplynk.com/channel/ext/10b98e7c615f43a98b180d51797e74aa/wpvi_24x7_news.m3u8"
-  },
-  {
-    "name": "WTAE ABC (Pittsburgh PA)",
-    "logo": "",
-    "group": "News",
-    "url": "https://fl2.moveonjoy.com/PA_PITTSBURGH_ABC/index.m3u8"
   },
   {
     "name": "WTMO-CD1",
@@ -6808,12 +6748,6 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/27/WWAY_logo.png",
     "group": "News",
     "url": "https://content.uplynk.com/channel/ext/f05837c508c44712aa7129d531f7dbe6/wtvd_24x7_news.m3u8"
-  },
-  {
-    "name": "WXYZ ABC (Detroit MI)",
-    "logo": "https://ewscripps.brightspotcdn.com/f7/ba/53c4c0b14d649fb08d19e76d3fc2/main-logo.png",
-    "group": "News",
-    "url": "http://fl41.moveonjoy.com/MI_DETROIT_ABC/index.m3u8"
   },
   {
     "name": "Welat TV (1080i)",
@@ -7192,12 +7126,6 @@
     "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
     "group": "News;Sports",
     "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8"
-  },
-  {
-    "name": "ESPNews (720p)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ESPNews.svg/512px-ESPNews.svg.png",
-    "group": "News;Sports",
-    "url": "https://fl31.moveonjoy.com/ESPN_NEWS/index.m3u8"
   },
   {
     "name": "ABC 9 Manchester NH (WMUR-TV) (720p)",
@@ -7626,12 +7554,6 @@
     "url": "https://raycom-accdn-firetv.amagi.tv/playlist.m3u8"
   },
   {
-    "name": "ACCN (720p)",
-    "logo": "https://i.imgur.com/TpCkbkT.png",
-    "group": "Sports",
-    "url": "https://fl31.moveonjoy.com/ACC_NETWORK/index.m3u8"
-  },
-  {
     "name": "ACI Sport TV (1080p)",
     "logo": "https://i.imgur.com/U8cHMOt.png",
     "group": "Sports",
@@ -7818,12 +7740,6 @@
     "url": "https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5e9f2c05172a0f0007db4786/master.m3u8?appName=web&appVersion=9.19.0&deviceDNT=0&deviceId=affbdbfa-5fa3-48af-8369-57c005daef42&deviceMake=firefox&deviceModel=web&deviceType=web&deviceVersion=147.0.0&serverSideAds=false&sid=890f9786-922b-4308-bef7-b8a6a62f256b"
   },
   {
-    "name": "CBS Sports Network USA",
-    "logo": "https://i.imgur.com/A8CnA8g.png",
-    "group": "Sports",
-    "url": "https://fl31.moveonjoy.com/CBS_SPORTS_NETWORK/index.m3u8"
-  },
-  {
     "name": "CCTV-16 (2160p)",
     "logo": "https://i.imgur.com/ZzV6JQp.png",
     "group": "Sports",
@@ -7906,12 +7822,6 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/ESPN_Deportes.svg/512px-ESPN_Deportes.svg.png",
     "group": "Sports",
     "url": "https://e3.thetvapp.to/hls/espn-deportes/index.m3u8"
-  },
-  {
-    "name": "ESPN U (720p)",
-    "logo": "https://i.imgur.com/HiBrysh.png",
-    "group": "Sports",
-    "url": "http://fl41.moveonjoy.com/ESPN_U/index.m3u8"
   },
   {
     "name": "Egg Network (720p)",
@@ -8028,12 +7938,6 @@
     "url": "https://d3ehq1uaxory6w.cloudfront.net/out/v1/35c05f080f4e49a4b4eb031b5a14e505/TVG2index_2.m3u8"
   },
   {
-    "name": "FanDuel Sports Network",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/FanDuel_Sports_Network_logo.svg/330px-FanDuel_Sports_Network_logo.svg.png",
-    "group": "Sports",
-    "url": "http://fl41.moveonjoy.com/PAC_12/mpegts"
-  },
-  {
     "name": "FanDuel TV (720p)",
     "logo": "",
     "group": "Sports",
@@ -8044,12 +7948,6 @@
     "logo": "https://i.imgur.com/vlKPZHR.png",
     "group": "Sports",
     "url": "https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8"
-  },
-  {
-    "name": "Fox Sports 1",
-    "logo": "https://i.imgur.com/O9BapV9.png",
-    "group": "Sports",
-    "url": "https://fl2.moveonjoy.com/FOX_Sports_1/index.m3u8"
   },
   {
     "name": "Fubo Sports Network (1080p) [Geo-blocked]",
@@ -8100,10 +7998,10 @@
     "url": "https://d71gqtnep83vb.cloudfront.net/gol_classics/gol_classics.m3u8"
   },
   {
-    "name": "Golf Channel",
+    "name": "Golf Channel (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/Lgux6Ik.png",
     "group": "Sports",
-    "url": "https://fl31.moveonjoy.com/GOLF/index.m3u8"
+    "url": "https://tvpass.org/live/GolfChannel/hd"
   },
   {
     "name": "Golf Network (540p)",
@@ -8238,12 +8136,6 @@
     "url": "https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5e66968a70f34c0007d050be/master.m3u8?appName=web&appVersion=9.19.0&deviceDNT=0&deviceId=affbdbfa-5fa3-48af-8369-57c005daef42&deviceMake=firefox&deviceModel=web&deviceType=web&deviceVersion=147.0.0&serverSideAds=false&sid=b24a9dca-0f04-498b-a54e-e848441bd909"
   },
   {
-    "name": "MLB Network",
-    "logo": "https://i.imgur.com/sA5V39D.png",
-    "group": "Sports",
-    "url": "https://fl31.moveonjoy.com/MLB_NETWORK/index.m3u8"
-  },
-  {
     "name": "MMA Junkie",
     "logo": "",
     "group": "Sports",
@@ -8262,10 +8154,10 @@
     "url": "https://cdn4.skygo.mn/live/disk1/MNBSport/DASH-FTA/MNBSport.mpd"
   },
   {
-    "name": "MSG",
+    "name": "MSG (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/SEQFh0P.png",
     "group": "Sports",
-    "url": "https://fl2.moveonjoy.com/MSG/index.m3u8"
+    "url": "https://tvpass.org/live/msg-madison-square-gardens/hd"
   },
   {
     "name": "MSG Plus (720p) [Not 24/7]",
@@ -8688,12 +8580,6 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/sportsgrid/master.m3u8?ads.vf=9SdYmRdXeBe"
   },
   {
-    "name": "SportsNet New York (540p)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SNY_logo.svg/512px-SNY_logo.svg.png",
-    "group": "Sports",
-    "url": "http://212.102.60.231/SNY/index.m3u8"
-  },
-  {
     "name": "SportsTVPlus",
     "logo": "https://i.imgur.com/EyCDhgN.png",
     "group": "Sports",
@@ -8704,12 +8590,6 @@
     "logo": "https://i.imgur.com/R6FsKYj.png",
     "group": "Sports",
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/sportskool-tv/master.m3u8?ads.vf=0vV6h8I3vC8"
-  },
-  {
-    "name": "Sportsman Channel",
-    "logo": "https://i.imgur.com/CXauv8M.png",
-    "group": "Sports",
-    "url": "http://212.102.60.231/SPORTSMAN_CHANNEL/index.m3u8"
   },
   {
     "name": "Stadium (720p)",
@@ -8994,7 +8874,7 @@
     "url": "https://unbeaten-tcl.amagi.tv/playlist.m3u8"
   },
   {
-    "name": "VITAL Drive [Not 24/7]",
+    "name": "VITAL Drive",
     "logo": "https://i.imgur.com/XoR9zLh.png",
     "group": "Sports",
     "url": "https://autopilot.catcast.tv/content/37909/index.m3u8"
@@ -9142,6 +9022,12 @@
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_TRAVELXP/images/LOGO_HD/image.png",
     "group": "Travel",
     "url": "https://travelxp-travelxp-1-au.samsung.wurl.tv/playlist.m3u8"
+  },
+  {
+    "name": "Travelxp 4K HDR (2160p) [Geo-blocked]",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_TRAVELXP/images/LOGO_HD/image.png",
+    "group": "Travel",
+    "url": "https://deltatesttatasky.akamaized.net/out/i/968284.m3u8"
   },
   {
     "name": "Travelxp HD (1080p) [Geo-blocked]",
