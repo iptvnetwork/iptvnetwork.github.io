@@ -393,7 +393,7 @@
     "name": "Anmol TV (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_ANMOL/images/LOGO_HD/LOGO_HD_image.png",
     "group": "Entertainment",
-    "url": "http://103.78.149.54:8000/play/a00j/index.m3u8"
+    "url": "http://163.61.227.29:8000/play/a04a/index.m3u8"
   },
   {
     "name": "Apna Punjab TV (720p)",
@@ -672,6 +672,12 @@
     "url": "https://epiconvh.akamaized.net/live/nazara/master.m3u8"
   },
   {
+    "name": "Nepal 1 (396p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Nepal_one.png",
+    "group": "Entertainment",
+    "url": "https://d1msejlow1t3l4.cloudfront.net/fta/nepal1/chunks.m3u8"
+  },
+  {
     "name": "PTC Punjabi (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_PTC_PUNJABI/images/LOGO_HD/image.png",
     "group": "Entertainment",
@@ -831,7 +837,7 @@
     "name": "Sun Neo (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SUN_NEO/images/LOGO_HD/image.png",
     "group": "Entertainment",
-    "url": "http://103.78.149.54:8000/play/a00y/index.m3u8"
+    "url": "http://163.61.227.29:8000/play/a04t/index.m3u8"
   },
   {
     "name": "Sun TV (576p)",
@@ -1932,6 +1938,12 @@
     "url": "http://103.78.149.54:8000/play/a022/index.m3u8"
   },
   {
+    "name": "Zee Cinema HD (480p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_CINEMA/images/LOGO_HD/LOGO_HD_image.png",
+    "group": "Movies",
+    "url": "http://103.99.249.139/zeecinema/index.m3u8"
+  },
+  {
     "name": "Zee South Flix (1080p)",
     "logo": "https://d3bd0tgyk368z1.cloudfront.net/zeelg/LG%20logo%20artwork/400x200/zsouthflix.png",
     "group": "Movies",
@@ -2136,10 +2148,10 @@
     "url": "https://epiconvh.akamaized.net/live/showbox/master.m3u8"
   },
   {
-    "name": "Songdew TV (720p)",
+    "name": "Songdew TV (396p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/SongDew_TV.png",
     "group": "Music",
-    "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:songdewtv.smil/hdntl=exp=1767018459~acl=/*~data=hdntl~hmac=85f3eb24914af4b01a9b5886a64ab34a6861689e7a16e85eac290f7dce45b41c/chunklist_b2628000.m3u8"
+    "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:songdewtv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b"
   },
   {
     "name": "Steelbird Music (720p) [Not 24/7]",
@@ -2206,6 +2218,12 @@
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Tarang_Miusic.tif/lossless-page1-512px-Tarang_Miusic.tif.png",
     "group": "Music",
     "url": "https://livetv.tarangplus.in/tarangmusic-origin/live/playlist.m3u8"
+  },
+  {
+    "name": "Tunes 6 (720p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Tunes_6.png",
+    "group": "Music",
+    "url": "https://stream.d6-pro.com/tunes6music/live/video.m3u8"
   },
   {
     "name": "Vaanavil TV (720p)",
@@ -4768,6 +4786,12 @@
     "logo": "https://i.imgur.com/gMVqbwU.png",
     "group": "News",
     "url": "https://cdn4.skygo.mn/live/disk1/MNCTV/HLSv3-FTA/MNCTV.m3u8"
+  },
+  {
+    "name": "MS NOW (720p)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/MS_NOW_logo.svg/1280px-MS_NOW_logo.svg.png",
+    "group": "News",
+    "url": "http://41.205.93.154/MSNBC/index.m3u8"
   },
   {
     "name": "MTV Uutiset (720p)",
@@ -7416,6 +7440,12 @@
     "url": "https://mumt01.tangotv.in/OMTV/index.m3u8"
   },
   {
+    "name": "PMC Telugu (1080p)",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/PMC_Telugu.png",
+    "group": "Religious",
+    "url": "https://mumbai-edge.smartplaytv.in/PMC/index.m3u8"
+  },
+  {
     "name": "Paras Gold (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_PARAS_GOLD_ONE/images/LOGO_HD/image.png",
     "group": "Religious",
@@ -8658,6 +8688,12 @@
     "url": "http://161.248.38.40:8000/play/a06n/index.m3u8"
   },
   {
+    "name": "Star Sports 2 Hindi HD (480p)",
+    "logo": "https://i.imgur.com/kHerF19.png",
+    "group": "Sports",
+    "url": "http://tvn1.chowdhury-shaheb.com/starsport2/index.m3u8"
+  },
+  {
     "name": "Star Sports 2 Tamil (1080p)",
     "logo": "https://i.imgur.com/eWPoUxB.png",
     "group": "Sports",
@@ -8674,6 +8710,12 @@
     "logo": "https://i.imgur.com/bVQBF6R.png",
     "group": "Sports",
     "url": "https://rightsboosterltd-scl-2-eu.rakuten.wurl.tv/playlist.m3u8"
+  },
+  {
+    "name": "Suspilne. Sport (1080p) [Geo-blocked]",
+    "logo": "https://i.imgur.com/16IhU0M.png",
+    "group": "Sports",
+    "url": "https://cdnua05.hls.tv/934/hls/8743361621b245838bee193c9ec28322/4856/stream.m3u8"
   },
   {
     "name": "Swerve Sports",
