@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let hls = null;
     let observer = null;
+    let fuse = null;
 
     // --- Initialization ---
     init();
@@ -73,7 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function showToast(message, icon = 'fa-info-circle') {
         const toast = document.createElement('div');
         toast.className = 'toast';
-        toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+        const iconEl = document.createElement('i');
+        iconEl.className = `fa-solid ${icon}`;
+        const span = document.createElement('span');
+        span.textContent = message;
+        toast.appendChild(iconEl);
+        toast.appendChild(document.createTextNode(' '));
+        toast.appendChild(span);
 
         elements.toastContainer.appendChild(toast);
 
@@ -178,6 +185,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Re-render
         renderGroups();
+        // Initialize Fuse for fuzzy search
+        try {
+            fuse = new Fuse(state.channels, { keys: ['name', 'group'], threshold: 0.3 });
+        } catch (e) {
+            fuse = null;
+        }
+
         filterChannels();
     }
 
@@ -199,7 +213,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (group.toLowerCase().includes('sport')) icon = 'fa-futbol';
             if (group.toLowerCase().includes('news')) icon = 'fa-newspaper';
 
-            btn.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${group}</span>`;
+            const iconEl = document.createElement('i');
+            iconEl.className = `fa-solid ${icon}`;
+            const span = document.createElement('span');
+            span.textContent = group;
+            btn.appendChild(iconEl);
+            btn.appendChild(document.createTextNode(' '));
+            btn.appendChild(span);
 
             btn.addEventListener('click', (e) => {
                 // Remove active class from all
@@ -216,13 +236,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Filtering Logic ---
     function filterChannels() {
-        const query = elements.searchInput.value.toLowerCase();
+        const query = elements.searchInput.value.trim();
 
-        state.filteredChannels = state.channels.filter(ch => {
-            const matchesGroup = state.currentFilter === 'all' || ch.group === state.currentFilter;
-            const matchesSearch = ch.name.toLowerCase().includes(query) || ch.group.toLowerCase().includes(query);
-            return matchesGroup && matchesSearch;
-        });
+        if (query && fuse) {
+            const results = fuse.search(query);
+            state.filteredChannels = results.map(r => r.item).filter(ch => state.currentFilter === 'all' || ch.group === state.currentFilter);
+        } else {
+            const q = query.toLowerCase();
+            state.filteredChannels = state.channels.filter(ch => {
+                const matchesGroup = state.currentFilter === 'all' || ch.group === state.currentFilter;
+                const matchesSearch = !q || ch.name.toLowerCase().includes(q) || ch.group.toLowerCase().includes(q);
+                return matchesGroup && matchesSearch;
+            });
+        }
 
         // Reset visible count on filter change
         state.visibleCount = state.batchSize;
@@ -263,18 +289,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const logoUrl = channel.logo ? channel.logo : 'assets/images/default-tv.png';
 
-            card.innerHTML = `
-                <div class="card-image">
-                    <img src="${logoUrl}" alt="${channel.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=${encodeURIComponent(channel.name)}'">
-                </div>
-                <div class="card-info">
-                    <div class="card-name" title="${channel.name}">${channel.name}</div>
-                    <div class="card-group">${channel.group}</div>
-                    <div class="live-status">
-                        <div class="live-dot"></div> Live
-                    </div>
-                </div>
-            `;
+            const imgWrap = document.createElement('div');
+            imgWrap.className = 'card-image';
+            const img = document.createElement('img');
+            img.src = logoUrl;
+            img.alt = channel.name;
+            img.loading = 'lazy';
+            img.onerror = function () { this.src = 'https://via.placeholder.com/150?text=' + encodeURIComponent(channel.name); };
+            imgWrap.appendChild(img);
+
+            const info = document.createElement('div');
+            info.className = 'card-info';
+
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'card-name';
+            nameDiv.title = channel.name;
+            nameDiv.textContent = channel.name;
+
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'card-group';
+            groupDiv.textContent = channel.group;
+
+            const liveDiv = document.createElement('div');
+            liveDiv.className = 'live-status';
+            const liveDot = document.createElement('div');
+            liveDot.className = 'live-dot';
+            liveDiv.appendChild(liveDot);
+            liveDiv.appendChild(document.createTextNode(' Live'));
+
+            // Report button
+            const reportBtn = document.createElement('button');
+            reportBtn.className = 'report-btn';
+            reportBtn.title = 'Report channel';
+            reportBtn.innerHTML = '<i class="fa-regular fa-flag"></i>';
+            reportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openReport(channel);
+            });
+
+            info.appendChild(nameDiv);
+            info.appendChild(groupDiv);
+            info.appendChild(liveDiv);
+            info.appendChild(reportBtn);
+
+            card.appendChild(imgWrap);
+            card.appendChild(info);
 
             card.addEventListener('click', () => openPlayer(channel));
             fragment.appendChild(card);
@@ -374,6 +433,40 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.videoPlayer.src = '';
     }
 
+    // --- Reporting Logic ---
+    function openReport(channel) {
+        const modal = document.getElementById('report-modal');
+        const nameEl = document.getElementById('report-channel-name');
+        if (!modal || !nameEl) return;
+        nameEl.textContent = channel.name + ' — ' + (channel.group || '');
+        modal.dataset.url = channel.url || '';
+        modal.classList.add('active');
+    }
+
+    function closeReport() {
+        const modal = document.getElementById('report-modal');
+        if (!modal) return;
+        modal.classList.remove('active');
+        delete modal.dataset.url;
+        document.getElementById('report-notes').value = '';
+        document.getElementById('report-reason').value = 'broken';
+    }
+
+    function submitReport() {
+        const modal = document.getElementById('report-modal');
+        if (!modal) return;
+        const url = modal.dataset.url || '';
+        const reason = document.getElementById('report-reason').value;
+        const notes = document.getElementById('report-notes').value;
+
+        const reports = JSON.parse(localStorage.getItem('iptv_reports') || '[]');
+        reports.push({ url, reason, notes, time: Date.now() });
+        localStorage.setItem('iptv_reports', JSON.stringify(reports));
+
+        showToast('Report submitted — thank you', 'fa-flag');
+        closeReport();
+    }
+
     // --- Favorites Logic ---
     function toggleFavorite(url) {
         if (state.favorites.has(url)) {
@@ -458,6 +551,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Player Controls
         elements.closePlayerBtn.addEventListener('click', closePlayer);
+
+        // Report Modal Controls
+        const closeReportBtn = document.getElementById('close-report');
+        const submitReportBtn = document.getElementById('submit-report');
+        const reportModal = document.getElementById('report-modal');
+        if (closeReportBtn) closeReportBtn.addEventListener('click', closeReport);
+        if (submitReportBtn) submitReportBtn.addEventListener('click', submitReport);
+        if (reportModal) {
+            reportModal.addEventListener('click', (e) => {
+                if (e.target === reportModal) closeReport();
+            });
+        }
 
         // Close on clicking outside modal content
         elements.playerModal.addEventListener('click', (e) => {

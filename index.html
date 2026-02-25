@@ -71,6 +71,8 @@
 
     <!-- HLS Player -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 </head>
 
 <body>
@@ -143,7 +145,31 @@
         </div>
     </div>
 
+    <!-- Report Modal -->
+    <div class="report-modal" id="report-modal">
+        <div class="report-content">
+            <button class="close-report" id="close-report">×</button>
+            <h3>Report Channel</h3>
+            <p id="report-channel-name">Channel</p>
+            <label for="report-reason">Reason</label>
+            <select id="report-reason">
+                <option value="copyright">Copyright / Unauthorized</option>
+                <option value="geo">Geo-blocked / Not available</option>
+                <option value="broken">Broken / Not playing</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea id="report-notes" placeholder="Additional details (optional)"></textarea>
+            <button id="submit-report">Submit Report</button>
+        </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
+    <script>
+        // Service worker registration (basic)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW register failed', err));
+        }
+    </script>
 </body>
 
 </html>

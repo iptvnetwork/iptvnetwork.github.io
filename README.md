@@ -52,3 +52,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ⚠️ Disclaimer
 
 This project is for educational purposes only. The channel links provided in `data/channels.json` may be subject to copyright and are collected from publicly available sources on the internet. We do not host any content.
+
+If you believe a channel listed here infringes rights or is not permitted to be published, please use the in-app "Report Channel" flow (click the report button on a channel card) or open an issue explaining the problem. Reported items are reviewed and removed when appropriate.

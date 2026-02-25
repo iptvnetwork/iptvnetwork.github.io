@@ -1,0 +1,3 @@
+requests>=2.0
+# Optional: add aiohttp for concurrency
+# aiohttp>=3.8
