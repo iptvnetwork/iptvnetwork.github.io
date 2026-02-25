@@ -306,10 +306,22 @@
     "url": "https://amg01448-amg01448c16-samsung-in-3495.playouts.now.amagi.tv/playlist/amg01448-samsungindia-historychannelenglish-samsungin/playlist.m3u8"
   },
   {
+    "name": "National Geographic HD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NATIONAL_GEOGRAPHIC_CHANNEL/images/LOGO_HD/image.png",
+    "group": "Documentary",
+    "url": "http://103.113.103.202:8001/play/a007/index.m3u8"
+  },
+  {
     "name": "National Geographic Wild (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NAT_GEO_WILD/images/LOGO_HD/image.png",
     "group": "Documentary",
     "url": "http://103.229.254.25:7001/play/a06r/index.m3u8"
+  },
+  {
+    "name": "National Geographic Wild HD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NAT_GEO_WILD/images/LOGO_HD/image.png",
+    "group": "Documentary",
+    "url": "http://103.113.103.202:8001/play/a02s/index.m3u8"
   },
   {
     "name": "Safari TV (480p) [Not 24/7]",
@@ -438,10 +450,10 @@
     "url": "http://103.229.254.25:7001/play/a077/index.m3u8"
   },
   {
-    "name": "Colors Bangla HD (720p)",
+    "name": "Colors Bangla HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_BANGLA/images/LOGO_HD/image.png",
     "group": "Entertainment",
-    "url": "https://tvsen3.aynaott.com/u3LkNQ7UHhFX/index.m3u8"
+    "url": "http://103.229.254.25:7001/play/a0ds/index.m3u8"
   },
   {
     "name": "Colors HD (1080p)",
@@ -732,12 +744,6 @@
     "url": "https://cdn-4.pishow.tv/live/1039/master.m3u8"
   },
   {
-    "name": "SONY PAL (576p)",
-    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_PAL/images/LOGO_HD/image.png",
-    "group": "Entertainment",
-    "url": "http://103.78.149.54:8000/play/a016/index.m3u8"
-  },
-  {
     "name": "Sada TV (1080p) [Not 24/7]",
     "logo": "https://i.ibb.co/cXPzpGp/SADA-CHANNEL-HBN-global-Punjabi-Satellite-TV.png",
     "group": "Entertainment",
@@ -807,7 +813,7 @@
     "name": "Star Vijay HD (360p)",
     "logo": "https://i.imgur.com/dZtJHAe.png",
     "group": "Entertainment",
-    "url": "http://198.27.83.207:8888/STAR_VIJAY_SD/index.m3u8"
+    "url": "http://198.27.83.207:2550/STAR_VIJAY_SD/index.m3u8"
   },
   {
     "name": "StarPlus (576p)",
@@ -951,7 +957,7 @@
     "name": "Zee Tamil HD (360p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_TAMIL_HD/images/LOGO_HD/LOGO_HD_image.png",
     "group": "Entertainment",
-    "url": "http://198.27.83.207:8888/ZEE_TAMIL_SD/index.m3u8"
+    "url": "http://198.27.83.207:2550/ZEE_TAMIL_SD/index.m3u8"
   },
   {
     "name": "TV Paraense (720p)",
@@ -1614,6 +1620,12 @@
     "url": "http://103.229.254.25:7001/play/a034/index.m3u8"
   },
   {
+    "name": "&flix HD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDFLIX/images/LOGO_HD/LOGO_HD_image.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a02k/index.m3u8"
+  },
+  {
     "name": "&pictures HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDPICTURES/images/LOGO_HD/LOGO_HD_image.png",
     "group": "Movies",
@@ -1653,7 +1665,7 @@
     "name": "Anmol Cinema (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_ANMOL_CINEMA/images/LOGO_HD/LOGO_HD_image.png",
     "group": "Movies",
-    "url": "http://103.78.149.54:8000/play/a01f/index.m3u8"
+    "url": "http://103.113.103.202:8001/play/a017/index.m3u8"
   },
   {
     "name": "Anmol Cinema 2 (576p)",
@@ -1836,6 +1848,18 @@
     "url": "https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8"
   },
   {
+    "name": "Sony Max (576p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_MAX/images/LOGO_HD/image.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a025/index.m3u8"
+  },
+  {
+    "name": "Sony Max 2 (576p)",
+    "logo": "https://i.imgur.com/gqUYk6C.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a002/index.m3u8"
+  },
+  {
     "name": "Sony Pix HD (1080p)",
     "logo": "https://i.postimg.cc/Z5G8j67L/PIX-HD-WHITE.png",
     "group": "Movies",
@@ -1866,6 +1890,12 @@
     "url": "http://103.229.254.25:7001/play/a0dd/index.m3u8"
   },
   {
+    "name": "Star Gold Romance (576p)",
+    "logo": "https://i.imgur.com/gSWv9U3.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a029/index.m3u8"
+  },
+  {
     "name": "Star Gold Select HD (1080p)",
     "logo": "https://i.imgur.com/U7eiuqv.png",
     "group": "Movies",
@@ -1876,6 +1906,18 @@
     "logo": "https://i.imgur.com/azqtpYh.png",
     "group": "Movies",
     "url": "http://161.248.38.40:8000/play/a06v/index.m3u8"
+  },
+  {
+    "name": "Star Movies HD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_MOVIES/images/LOGO_HD/image.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a02j/index.m3u8"
+  },
+  {
+    "name": "Star Movies Select HD (1080p)",
+    "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_MOVIES_SELECT_HD/images/LOGO_HD/image.png",
+    "group": "Movies",
+    "url": "http://103.113.103.202:8001/play/a02i/index.m3u8"
   },
   {
     "name": "Star Utsav Movies (576p)",
@@ -3786,10 +3828,10 @@
     "url": "http://seb.sason.top/sc/dsxw_fhd.m3u8"
   },
   {
-    "name": "ETV (720p)",
+    "name": "ETV (1080p)",
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/ETV_Mongolia_logo.png/512px-ETV_Mongolia_logo.png",
     "group": "News",
-    "url": "https://cdn4.skygo.mn/live/disk1/ETV/HLSv3-FTA/ETV.m3u8"
+    "url": "https://cdn4.skygo.mn/live/disk1/ETV/DASH-FTA/ETV.mpd"
   },
   {
     "name": "ETV Andhra Pradesh (1080p)",
@@ -3816,10 +3858,10 @@
     "url": "https://origin2.afxp.telemedia.co.za/abr_kapang/enterepreneur/playlist.m3u8"
   },
   {
-    "name": "Eagle News HD (720p)",
+    "name": "Eagle News HD (1080p)",
     "logo": "https://i.imgur.com/2oqXpve.jpg",
     "group": "News",
-    "url": "https://cdn4.skygo.mn/live/disk1/Eagle/HLSv3-FTA/Eagle.m3u8"
+    "url": "https://cdn4.skygo.mn/live/disk1/Eagle/DASH-FTA/Eagle.mpd"
   },
   {
     "name": "Ecotel TV (720p)",
@@ -4416,10 +4458,10 @@
     "url": "https://cc-lyf4c0hwzg5dd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-lyf4c0hwzg5dd/v1/vglive-sk-479089/main.m3u8"
   },
   {
-    "name": "India Today (720p) [Not 24/7]",
+    "name": "India Today (720p) [Geo-blocked]",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_INDIA_TODAY/images/LOGO_HD/image.png",
     "group": "News",
-    "url": "https://indiatodaylive.akamaized.net/hls/live/2014320/indiatoday/indiatodaylive/playlist.m3u8"
+    "url": "https://amg00644-amg00644c1-ondemandkorea-amesia-10266.playouts.now.amagi.tv/playlist/amg00644-tvtodaynetworkltdfast-indiatoday-ondemandkoreaamesia/playlist.m3u8"
   },
   {
     "name": "India Voice (576p)",
@@ -4770,10 +4812,10 @@
     "url": "https://limited2.todostreaming.es/live/m95-livestream.m3u8"
   },
   {
-    "name": "MNC (720p)",
+    "name": "MNC (1080p)",
     "logo": "https://i.imgur.com/gMVqbwU.png",
     "group": "News",
-    "url": "https://cdn4.skygo.mn/live/disk1/MNCTV/HLSv3-FTA/MNCTV.m3u8"
+    "url": "https://cdn4.skygo.mn/live/disk1/MNCTV/DASH-FTA/MNCTV.mpd"
   },
   {
     "name": "MS NOW (720p)",
@@ -6076,6 +6118,12 @@
     "logo": "https://i.imgur.com/ZsPb8nL.png",
     "group": "News",
     "url": "https://skynewsau-live.akamaized.net/hls/live/2002691/skynewsau-extra3/master.m3u8"
+  },
+  {
+    "name": "Star Bharat (576p)",
+    "logo": "https://i.imgur.com/Q8ajPij.png",
+    "group": "News",
+    "url": "http://103.113.103.202:8001/play/a01z/index.m3u8"
   },
   {
     "name": "Start TV (480p)",
@@ -8328,6 +8376,12 @@
     "url": "https://streams.comclark.com/live_input/nudge_sports/playlist.m3u8"
   },
   {
+    "name": "ORF Sport+ HD (720p)",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/ORF_Sport%2B.svg/512px-ORF_Sport%2B.svg.png",
+    "group": "Sports",
+    "url": "http://87.106.2.165:8443/orfsporthd/index.m3u8"
+  },
+  {
     "name": "Olympic Channel [Geo-blocked]",
     "logo": "https://i.imgur.com/wPQVVtj.png",
     "group": "Sports",
@@ -8493,7 +8547,7 @@
     "name": "Radio Turrialba TV Sports (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/2ZcUXbE.png",
     "group": "Sports",
-    "url": "https://server5.cloundmediacp.in/turrialbatv/turrialbatv/playlist.m3u8"
+    "url": "https://live20.bozztv.com/akamaissh101/ssh101/turrialbatv/playlist.m3u8"
   },
   {
     "name": "Rai Sport HD [Geo-Blocked]",
@@ -8692,6 +8746,18 @@
     "logo": "https://i.imgur.com/eWPoUxB.png",
     "group": "Sports",
     "url": "http://103.229.254.25:7001/play/a0d1/index.m3u8"
+  },
+  {
+    "name": "Star Sports Select 1 HD (1080p)",
+    "logo": "https://i.imgur.com/Mh9tKPx.png",
+    "group": "Sports",
+    "url": "http://103.113.103.202:8001/play/a02e/index.m3u8"
+  },
+  {
+    "name": "Star Sports Select 2 HD (1080p)",
+    "logo": "https://i.imgur.com/FtRT73R.png",
+    "group": "Sports",
+    "url": "http://103.113.103.202:8001/play/a02q/index.m3u8"
   },
   {
     "name": "Strongman (720p)",
